@@ -90,7 +90,7 @@
   }
 
   .banner--medium:not(.banner--adapt) {
-    min-height: 56rem;
+    min-height: 60rem;
   }
 
   .banner--large:not(.banner--adapt) {
@@ -147,6 +147,7 @@
   .banner:not(.banner--stacked) {
     flex-direction: row;
     flex-wrap: wrap;
+    height: 85vh;
   }
 
   .banner--stacked {
@@ -156,6 +157,10 @@
   .banner--stacked .banner__media {
     flex-direction: column;
   }
+}
+
+.banner__media.desktop-and-mobile {
+  display: none;
 }
 
 .banner__media {
@@ -210,6 +215,14 @@
 @media screen and (min-width: 750px) {
   .banner__media {
     height: 100%;
+  }
+
+  .banner__media--mobile {
+    display: none;
+  }
+
+  .banner__media img {
+    object-position: var(--banner-media-position);
   }
 }
 
@@ -330,6 +343,51 @@
 @media screen and (max-width: 749px) {
   .banner--mobile-bottom:not(.banner--stacked) .banner__content {
     order: 2;
+  }
+
+  .banner__content.banner__content--mobile-top-left {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .banner__content.banner__content--mobile-top-center {
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .banner__content.banner__content--mobile-top-right {
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  .banner__content.banner__content--mobile-middle-left {
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .banner__content.banner__content--mobile-middle-center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner__content.banner__content--mobile-middle-right {
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .banner__content.banner__content--mobile-bottom-left {
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  .banner__content.banner__content--mobile-bottom-center {
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .banner__content.banner__content--mobile-bottom-right {
+    align-items: flex-end;
+    justify-content: flex-end;
   }
 
   .banner:not(.banner--mobile-bottom) .field__input,
@@ -457,6 +515,7 @@
   .banner--content-align-mobile-center .banner__buttons--multiple > * {
     flex-grow: 1;
     min-width: 22rem;
+    gap: 1rem;
   }
 }
 

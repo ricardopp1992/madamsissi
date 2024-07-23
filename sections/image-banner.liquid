@@ -59,6 +59,7 @@
     <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
       {%- liquid
         assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio
+        assign image_style = "--banner-media-position:" | append: section.settings.image_position | append: ';'
         if section.settings.image_2 != blank
           assign image_class = 'banner__media-image-half'
         endif
@@ -74,6 +75,7 @@
         section.settings.image
         | image_url: width: 3840
         | image_tag:
+          style: image_style,
           width: section.settings.image.width,
           height: image_height,
           class: image_class,
@@ -85,6 +87,27 @@
   {%- elsif section.settings.image_2 == blank -%}
     <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
       {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    </div>
+  {%- endif -%}
+  {%- if section.settings.mobile_image != blank -%}
+    <div class="banner__media banner__media--mobile media{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+      {%- liquid
+        assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio
+        assign image_style = "--banner--mobile-media-position:" | append: section.settings.mobile_image_position | append: ';'
+        assign sizes = full_width
+      -%}
+      {{
+        section.settings.mobile_image
+        | image_url: width: 760
+        | image_tag:
+          class: 'banner__media-image--mobile',
+          style: image_style,
+          width: section.settings.mobile_image.width,
+          height: image_height,
+          sizes: sizes,
+          widths: widths,
+          fetchpriority: fetch_priority
+      }}
     </div>
   {%- endif -%}
   {%- if section.settings.image_2 != blank -%}
@@ -115,7 +138,7 @@
       }}
     </div>
   {%- endif -%}
-  <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="banner__content banner__content--mobile-{{ section.settings.mobile_content_position }} banner__content--{{ section.settings.desktop_content_position }} page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     <div class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
@@ -156,6 +179,9 @@
                   {% endif %}
                   class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}"
                 >
+                  {% if block.settings.button_icon %}
+                    {{ block.settings.button_icon | append: '.svg' | asset_url | img_tag: 'button__icon' }}
+                  {% endif %}
                   {{- block.settings.button_label_2 | escape -}}
                 </a>
               {%- endif -%}
@@ -184,6 +210,26 @@
       "type": "image_picker",
       "id": "image_2",
       "label": "t:sections.image-banner.settings.image_2.label"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "t:sections.image-banner.settings.image_position.label",
+      "default": "top center",
+      "options": [
+        {
+          "value": "top center",
+          "label": "t:sections.image-banner.settings.image_position.option_top.label"
+        },
+        {
+          "value": "center center",
+          "label": "t:sections.image-banner.settings.image_position.option_center.label"
+        },
+        {
+          "value": "bottom center",
+          "label": "t:sections.image-banner.settings.image_position.option_bottom.label"
+        }
+      ]
     },
     {
       "type": "range",
@@ -329,6 +375,55 @@
       "content": "t:sections.image-banner.settings.mobile.content"
     },
     {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "t:sections.image-banner.settings.mobile_image.label"
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_position",
+      "options": [
+        {
+          "value": "top-left",
+          "label": "t:sections.image-banner.settings.mobile_content_position.options__1.label"
+        },
+        {
+          "value": "top-center",
+          "label": "t:sections.image-banner.settings.mobile_content_position.options__2.label"
+        },
+        {
+          "value": "top-right",
+          "label": "t:sections.image-banner.settings.mobile_content_position.options__3.label"
+        },
+        {
+          "value": "middle-left",
+          "label": "t:sections.image-banner.settings.mobile_content_position.options__4.label"
+        },
+        {
+          "value": "middle-center",
+          "label": "t:sections.image-banner.settings.mobile_content_position.options__5.label"
+        },
+        {
+          "value": "middle-right",
+          "label": "t:sections.image-banner.settings.mobile_content_position.options__6.label"
+        },
+        {
+          "value": "bottom-left",
+          "label": "t:sections.image-banner.settings.mobile_content_position.options__7.label"
+        },
+        {
+          "value": "bottom-center",
+          "label": "t:sections.image-banner.settings.mobile_content_position.options__8.label"
+        },
+        {
+          "value": "bottom-right",
+          "label": "t:sections.image-banner.settings.mobile_content_position.options__9.label"
+        }
+      ],
+      "default": "middle-center",
+      "label": "t:sections.image-banner.settings.mobile_content_position.label"
+    },
+    {
       "type": "select",
       "id": "mobile_content_alignment",
       "options": [
@@ -470,6 +565,17 @@
           "type": "url",
           "id": "button_link_2",
           "label": "t:sections.image-banner.blocks.buttons.settings.button_link_2.label"
+        },
+        {
+          "type": "select",
+          "label": "t:sections.image-banner.blocks.buttons.settings.button_icon.label",
+          "id": "button_icon",
+          "options": [
+            {
+              "value": "sale-tag",
+              "label": "t:sections.all.button_icon.sale_tag.label"
+            }
+          ]
         },
         {
           "type": "checkbox",

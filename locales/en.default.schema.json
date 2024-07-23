@@ -445,6 +445,11 @@
         },
         "label": "Image shape",
         "info": "Standard-styled cards have no borders when an image shape is active."
+      },
+      "button_icon": {
+        "sale_tag": {
+          "label": "Sale tag"
+        }
       }
     },
     "announcement-bar": {
@@ -1192,6 +1197,18 @@
         "image": {
           "label": "First image"
         },
+        "image_position": {
+          "label": "Image position",
+          "option_top": {
+            "label": "Top"
+          },
+          "option_center": {
+            "label": "Center"
+          },
+          "option_bottom": {
+            "label": "Bottom"
+          }
+        },
         "image_2": {
           "label": "Second image"
         },
@@ -1243,6 +1260,39 @@
             "label": "Bottom Right"
           },
           "label": "Desktop content position"
+        },
+        "mobile_image": {
+          "label": "Mobile image banner"
+        },
+        "mobile_content_position": {
+          "options__1": {
+            "label": "Top Left"
+          },
+          "options__2": {
+            "label": "Top Center"
+          },
+          "options__3": {
+            "label": "Top Right"
+          },
+          "options__4": {
+            "label": "Middle Left"
+          },
+          "options__5": {
+            "label": "Middle Center"
+          },
+          "options__6": {
+            "label": "Middle Right"
+          },
+          "options__7": {
+            "label": "Bottom Left"
+          },
+          "options__8": {
+            "label": "Bottom Center"
+          },
+          "options__9": {
+            "label": "Bottom Right"
+          },
+          "label": "Mobile content position"
         },
         "show_text_box": {
           "label": "Show container on desktop"
@@ -1330,6 +1380,12 @@
               "label": "Second button label",
               "info": "Leave the label blank to hide the button.",
               "default": "Button label"
+            },
+            "button_icon": {
+              "label": "Button icon",
+              "options__1": {
+                "label": "Sale Tag"
+              }
             },
             "button_link_2": {
               "label": "Second button link"
