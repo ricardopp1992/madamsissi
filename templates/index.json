@@ -13,12 +13,13 @@
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
+            "button_label_1": "New Arrivals",
             "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "On Sale",
             "button_link_2": "",
-            "button_style_secondary_2": false
+            "button_icon": "sale-tag",
+            "button_style_secondary_2": true
           }
         }
       },
@@ -27,16 +28,53 @@
         "button"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/Screenshot_2024-07-23_at_11.37.12_AM.png",
+        "image_position": "center center",
         "image_overlay_opacity": 40,
         "image_height": "large",
-        "desktop_content_position": "bottom-center",
+        "desktop_content_position": "middle-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-2",
         "image_behavior": "none",
+        "mobile_image": "shopify:\/\/shop_images\/Screenshot_2024-07-23_at_12.48.40_PM.png",
+        "mobile_content_position": "bottom-center",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
+      }
+    },
+    "svg_text_column_z8YmGY": {
+      "type": "svg-text-column",
+      "blocks": {
+        "svg_text_Q6a8V6": {
+          "type": "svg_text",
+          "settings": {
+            "svg_file_icon": "box",
+            "description": "Entraga Gratuita a Partir de $50"
+          }
+        },
+        "svg_text_479Kpi": {
+          "type": "svg_text",
+          "settings": {
+            "svg_file_icon": "secure",
+            "description": "Pago 100% Seguro"
+          }
+        },
+        "svg_text_YmCnEw": {
+          "type": "svg_text",
+          "settings": {
+            "svg_file_icon": "back",
+            "description": "Devolución Disponible"
+          }
+        }
+      },
+      "block_order": [
+        "svg_text_Q6a8V6",
+        "svg_text_479Kpi",
+        "svg_text_YmCnEw"
+      ],
+      "settings": {
       }
     },
     "featured_collection": {
@@ -54,7 +92,7 @@
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-4",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -70,6 +108,7 @@
   },
   "order": [
     "image_banner",
+    "svg_text_column_z8YmGY",
     "featured_collection"
   ]
 }

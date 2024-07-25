@@ -507,6 +507,13 @@
   word-break: break-word;
 }
 
+.banner__buttons svg {
+  width: 30px;
+  height: 30px;
+  margin: 0 1rem;
+  stroke: rgb(var(--color-button));
+}
+
 @media screen and (max-width: 749px) {
   .banner--content-align-mobile-right .banner__buttons--multiple {
     justify-content: flex-end;

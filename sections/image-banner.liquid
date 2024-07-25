@@ -180,7 +180,7 @@
                   class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}"
                 >
                   {% if block.settings.button_icon %}
-                    {{ block.settings.button_icon | append: '.svg' | asset_url | img_tag: 'button__icon' }}
+                    {% render 'icon', icon: block.settings.button_icon %}
                   {% endif %}
                   {{- block.settings.button_label_2 | escape -}}
                 </a>

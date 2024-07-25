@@ -1,0 +1,111 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    margin: 3rem 0;
+    padding: 20px 0;
+  }
+
+  .svg-text__contianer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+  }
+
+  .svg-text__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 10px;
+    text-align: center;
+  }
+  .svg-text__contianer svg {
+    width: 60px;
+    min-height: 3rem;
+    stroke: rgb(var(--color-button));
+  }
+
+  .svg-text__contianer svg[data-name="back"], .svg-text__contianer svg[data-name="secure"] {
+    fill: rgb(var(--color-button));
+  }
+
+  .svg-text__devider {
+    margin: 0 auto;
+    margin-top: 5rem;
+    width: 60%;
+    border: 2px solid rgb(var(--color-button));
+    max-height: 800px;
+  }
+
+  @media screen and (min-width: 600px) {
+    .svg-text__contianer {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+</style>
+
+<div class="svg-text__contianer">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'svg_text' %}
+        <div class="svg-text__content">
+          {% render 'icon', icon: block.settings.svg_file_icon %}
+          <p> {{ block.settings.description }} </p>
+        </div>
+      {% else %}
+    {% endcase %}
+  {% endfor %}
+</div>
+  <hr class="svg-text__devider" />
+
+{% schema %}
+{
+  "name": "Features Multi Columns",
+  "settings": [
+    
+  ],
+  "blocks": [
+    {
+      "type": "svg_text",
+      "name": "Icon With Description",
+      "settings": [
+        {
+          "type": "select",
+          "id": "svg_file_icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "secure",
+              "label": "Lock"
+            },
+            {
+              "value": "box",
+              "label": "Box"
+            },
+            {
+              "value": "back",
+              "label": "Return"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Multi Column Features"
+    }
+  ]
+}
+{% endschema %}
