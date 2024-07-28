@@ -1,0 +1,66 @@
+<product-card class="embla__slide product_carousel__card">
+  <div class="product_carousel__image_link_variants">
+    <a class="product_carousel__image_link" href="{{ card_product.url }}">
+      <img
+        srcset="
+          {%- if card_product.featured_image.width >= 165 -%}{{ card_product.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
+          {%- if card_product.featured_image.width >= 360 -%}{{ card_product.featured_image | image_url: width: 360 }} 360w,{%- endif -%}
+          {%- if card_product.featured_image.width >= 533 -%}{{ card_product.featured_image | image_url: width: 533 }} 533w,{%- endif -%}
+          {%- if card_product.featured_image.width >= 720 -%}{{ card_product.featured_image | image_url: width: 720 }} 720w,{%- endif -%}
+          {%- if card_product.featured_image.width >= 940 -%}{{ card_product.featured_image | image_url: width: 940 }} 940w,{%- endif -%}
+          {%- if card_product.featured_image.width >= 1066 -%}{{ card_product.featured_image | image_url: width: 1066 }} 1066w,{%- endif -%}
+          {{ card_product.featured_image | image_url }} {{ card_product.featured_image.width }}w
+        "
+        src="{{ card_product.featured_image | image_url: width: 533 }}"
+        sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+        alt="{{ card_product.featured_image.alt | escape }}"
+        class="motion-reduce"
+        {% unless lazy_load == false %}
+        loading="lazy"
+        {% endunless %}
+        width="{{ card_product.featured_image.width }}"
+        height="{{ card_product.featured_image.height }}">
+    </a>
+    <div class="product_carousel__card_size">
+      {% for variant_value in card_product.options_by_name['Size'].values %}
+        <product-form data-section-id="{{ section.id }}">
+          {%- form 'product',
+            card_product,
+            id: product_form_id,
+            class: 'form',
+            novalidate: 'novalidate',
+            data-type: 'add-to-cart-form'
+          -%}
+            <input
+              type="hidden"
+              name="id"
+              value="{{ variant_value.variant.id }}"
+              class="product-variant-id"
+              {% if variant_value.variant.available == false %}
+                disabled
+              {% endif %}
+            >
+            <button type="submit" class="button" {% unless variant_value.variant.available %} disabled {% endunless %} data-variant-id="{{ variant_value.variant.id }}">
+              {{ variant_value.name }}
+              {%- render 'loading-spinner' -%}
+            </button>
+          {% endform %}
+        </product-form>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="product_carousel__card_info">
+    {% if card_product.options_by_name['Color'] != blank %}
+      <div class="product_carousel__card_colors">
+        {% for color_value in card_product.options_by_name['Color'].values %}
+          <span class="variant-color {% if color_value.selected %}selected{% endif %}" data-variant-id="{{ color_value.variant.id }}" data-color="{{ color_value.name }}"></span>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <a href="{{ card_product.url }}">
+      <h4>{{ card_product.title }}</h4>
+    </a>
+    {% render 'price' product: card_product, use_variant: true show_badges: true show_compare_at_price: true
+    %}
+  </div>
+</product-card>

@@ -1,41 +1,41 @@
 {
   "sections": {
-    "image_banner": {
+    "image_banner_jVfcNT": {
       "type": "image-banner",
       "blocks": {
-        "heading": {
+        "heading_PitMXX": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "heading": "Find Our Bikins On Madam Sissi",
+            "heading_size": "h1"
           }
         },
-        "button": {
+        "buttons_Ajde6G": {
           "type": "buttons",
           "settings": {
             "button_label_1": "New Arrivals",
-            "button_link_1": "shopify:\/\/collections\/all",
+            "button_link_1": "shopify:\/\/collections",
             "button_style_secondary_1": false,
             "button_label_2": "On Sale",
-            "button_link_2": "",
+            "button_link_2": "shopify:\/\/collections",
             "button_icon": "sale-tag",
             "button_style_secondary_2": true
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "heading_PitMXX",
+        "buttons_Ajde6G"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/Screenshot_2024-07-23_at_11.37.12_AM.png",
-        "image_position": "center center",
-        "image_overlay_opacity": 40,
-        "image_height": "large",
+        "image_position": "top center",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
         "desktop_content_position": "middle-center",
-        "show_text_box": false,
+        "show_text_box": true,
         "desktop_content_alignment": "center",
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "image_behavior": "none",
         "mobile_image": "shopify:\/\/shop_images\/Screenshot_2024-07-23_at_12.48.40_PM.png",
         "mobile_content_position": "bottom-center",
@@ -44,24 +44,24 @@
         "show_text_below": false
       }
     },
-    "svg_text_column_z8YmGY": {
+    "svg_text_column_8a7bL6": {
       "type": "svg-text-column",
       "blocks": {
-        "svg_text_Q6a8V6": {
+        "svg_text_h9KXnd": {
           "type": "svg_text",
           "settings": {
             "svg_file_icon": "box",
             "description": "Entraga Gratuita a Partir de $50"
           }
         },
-        "svg_text_479Kpi": {
+        "svg_text_br4frU": {
           "type": "svg_text",
           "settings": {
             "svg_file_icon": "secure",
-            "description": "Pago 100% Seguro"
+            "description": "Entraga Gratuita a Partir de $50"
           }
         },
-        "svg_text_YmCnEw": {
+        "svg_text_C8ECK9": {
           "type": "svg_text",
           "settings": {
             "svg_file_icon": "back",
@@ -70,45 +70,115 @@
         }
       },
       "block_order": [
-        "svg_text_Q6a8V6",
-        "svg_text_479Kpi",
-        "svg_text_YmCnEw"
+        "svg_text_h9KXnd",
+        "svg_text_br4frU",
+        "svg_text_C8ECK9"
       ],
       "settings": {
+      }
+    },
+    "product_carousel_rmipzA": {
+      "type": "product-carousel",
+      "settings": {
+        "section_header_text": "New Arrivals",
+        "collection": "swimwear"
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "Mi hermano es pendejo",
         "heading_size": "h2",
         "description": "",
-        "show_description": false,
+        "show_description": true,
         "description_style": "body",
         "collection": "all",
-        "products_to_show": 8,
+        "products_to_show": 4,
         "columns_desktop": 4,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
+        "enable_desktop_slider": true,
         "color_scheme": "scheme-4",
         "image_ratio": "adapt",
-        "image_shape": "default",
+        "image_shape": "blob",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "quick_add": "none",
+        "quick_add": "standard",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "collapsible_content_TgQhkX": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_n9ajba": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_eAcitz": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "iron",
+            "row_content": "<p>TEXTO<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_AXE8Fb": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_kDWnJm": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_n9ajba",
+        "collapsible_row_eAcitz",
+        "collapsible_row_AXE8Fb",
+        "collapsible_row_kDWnJm"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "F.A.Q",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "image_banner",
-    "svg_text_column_z8YmGY",
-    "featured_collection"
+    "image_banner_jVfcNT",
+    "svg_text_column_8a7bL6",
+    "product_carousel_rmipzA",
+    "featured_collection",
+    "collapsible_content_TgQhkX"
   ]
 }
