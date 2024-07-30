@@ -1,25 +1,33 @@
 <product-card class="embla__slide product_carousel__card">
   <div class="product_carousel__image_link_variants">
     <a class="product_carousel__image_link" href="{{ card_product.url }}">
+      {%- liquid 
+        if product.selected_variant
+          assign selected_variant_media = card_product.selected_or_first_available_variant
+          else
+          assign selected_variant_media = card_product
+        endif
+      -%}
       <img
         srcset="
-          {%- if card_product.featured_image.width >= 165 -%}{{ card_product.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
-          {%- if card_product.featured_image.width >= 360 -%}{{ card_product.featured_image | image_url: width: 360 }} 360w,{%- endif -%}
-          {%- if card_product.featured_image.width >= 533 -%}{{ card_product.featured_image | image_url: width: 533 }} 533w,{%- endif -%}
-          {%- if card_product.featured_image.width >= 720 -%}{{ card_product.featured_image | image_url: width: 720 }} 720w,{%- endif -%}
-          {%- if card_product.featured_image.width >= 940 -%}{{ card_product.featured_image | image_url: width: 940 }} 940w,{%- endif -%}
-          {%- if card_product.featured_image.width >= 1066 -%}{{ card_product.featured_image | image_url: width: 1066 }} 1066w,{%- endif -%}
-          {{ card_product.featured_image | image_url }} {{ card_product.featured_image.width }}w
+          {%- if selected_variant_media.featured_media.width >= 165 -%}{{ selected_variant_media.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
+          {%- if selected_variant_media.featured_media.width >= 360 -%}{{ selected_variant_media.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
+          {%- if selected_variant_media.featured_media.width >= 533 -%}{{ selected_variant_media.featured_media | image_url: width: 533 }} 533w,{%- endif -%}
+          {%- if selected_variant_media.featured_media.width >= 720 -%}{{ selected_variant_media.featured_media | image_url: width: 720 }} 720w,{%- endif -%}
+          {%- if selected_variant_media.featured_media.width >= 940 -%}{{ selected_variant_media.featured_media | image_url: width: 940 }} 940w,{%- endif -%}
+          {%- if selected_variant_media.featured_media.width >= 1066 -%}{{ selected_variant_media.featured_media | image_url: width: 1066 }} 1066w,{%- endif -%}
+          {{ selected_variant_media.featured_media | image_url }} {{ selected_variant_media.featured_media.width }}w
         "
-        src="{{ card_product.featured_image | image_url: width: 533 }}"
+        src="{{ selected_variant_media.featured_media | image_url: width: 533 }}"
         sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-        alt="{{ card_product.featured_image.alt | escape }}"
+        alt="{{ selected_variant_media.featured_media.alt | escape }}"
         class="motion-reduce"
         {% unless lazy_load == false %}
         loading="lazy"
         {% endunless %}
-        width="{{ card_product.featured_image.width }}"
-        height="{{ card_product.featured_image.height }}">
+        width="{{ selected_variant_media.featured_media.width }}"
+        height="{{ selected_variant_media.featured_media.height }}"
+      >
     </a>
     <div class="product_carousel__card_size">
       {% for variant_value in card_product.options_by_name['Size'].values %}
@@ -40,7 +48,7 @@
                 disabled
               {% endif %}
             >
-            <button type="submit" class="button" {% unless variant_value.variant.available %} disabled {% endunless %} data-variant-id="{{ variant_value.variant.id }}">
+            <button type="submit" class="product_carousel__add-cart-variant button" {% unless variant_value.variant.available %} disabled {% endunless %} data-variant-id="{{ variant_value.variant.id }}">
               {{ variant_value.name }}
               {%- render 'loading-spinner' -%}
             </button>

@@ -3,156 +3,13 @@
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
-  #shopify-section-{{ section.id }}
-  * {
+  #shopify-section-{{ section.id }} * {
     box-sizing: border-box;
-  }
-  .product-carousel__container h4 {
-    margin: 1rem 0;
-  }
-  .product-carousel__container h3 {
-    margin: 2rem 0;
-    font-size: 3rem;
-    color: rgb(var(--color-text));
-  }
-
-  .embla {
-    overflow: hidden;
-  }
-  .embla__container {
-    display: flex;
-  }
-  .embla__slide {
-    min-width: 0;
-    margin: 0 0.5rem;
-    flex: 0 0 calc(50% - 1rem);
-  }
-
-  .product_carousel__card img {
-    border-radius: 8px;
-    width: 100%;
-    height: 50rem;
-    object-fit: cover;
-  }
-  .product_carousel__card a {
-    text-decoration: none;
-    color: inherit;
-  }
-  .product_carousel__card .product_carousel__image_link_variants {
-    position: relative;
-    display: flex;
-  }
-  .product_carousel__card_size span[disabled] {
-    background: #ccc;
-    cursor: not-allowed;
-  }
-  .product_carousel__image_link_variants .product_carousel__card_size {
-    display: flex;
-    justify-content: space-evenly;
-    position: absolute;
-    bottom: 2rem;
-    z-index: 2;
-    width: 100%;
-    left: 50%;
-    background: rgb(var(--color-button) , 60%);
-    transform: translateX(-50%);
-    padding: 2rem 0;
-    border-radius: 5px;
-  }
-
-  .product_carousel__card_size span {
-    width: 4rem;
-    height: 4rem;
-    background: rgb(var(--color-secondary-button-text));
-    padding: 1rem;
-    border-radius: 5px;
-    font-family: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  .product_carousel__card .product_carousel__card_info {
-    text-align: center;
-  }
-  .product_carousel__card_info .product_carousel__card_colors {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-  }
-  .product_carousel__card_info .product_carousel__card_colors span {
-    display: flex;
-    border-radius: 50%;
-    height: 4rem;
-    width: 4rem;
-    cursor: pointer;
-  }
-  .product_carousel__card_colors span[data-color="Black"] {
-    background: #000;
-  }
-  .product_carousel__card_colors span[data-color="Green"] {
-    background: #008000;
-  }
-  .product_carousel__card_colors span[data-color="Orange"] {
-    background: #ffa500;
-  }
-  .product_carousel__card_colors span[data-color="Purple"] {
-    background: #663399;
-  }
-  .product_carousel__card_colors .selected {
-    border: 3px solid rgb(var(--color-button));
-  }
-  .product_carousel__card_info h4 {
-    font-weight: bold;
-  }
-  .product_carousel__card_info span.price {
-    font-weight: thin;
-  }
-  .product-carousel__header_and_buttons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: baseline;
-  }
-  .product-carousel__prev_next_box {
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(0.5rem);
-  }
-  .product-carousel__prev_next_box button {
-    height: auto;
-    border: 1px solid rgb(var(--color-button));
-    margin: 0 0.5rem;
-    background: transparent;
-    border-radius: 5px;
-  }
-  button:not([disabled]) {
-    cursor: pointer;
-  }
-  .product-carousel__prev_next_box svg {
-    stroke: rgb(var(--color-button));
-    display: inline;
-    width: 100%;
-    height: 100%;
-  }
-
-  @media screen and (min-width: 760px) {
-    .embla__slide {
-      margin: 0 1rem;
-      flex: 0 0 calc(25% - 1.7rem);
-    }
-
-    .product_carousel__image_link_variants .product_carousel__card_size {
-      display: none;
-    }
-    .product_carousel__card:hover .product_carousel__card_size {
-      display: flex;
-      justify-content: space-evenly;
-    }
   }
 </style>
 
 <div class="product-carousel__container page-width-desktop">
-  <div class="embla">
+  <div class="embla-{{ section.id }} carousel_container">
     <div class="product-carousel__header_and_buttons">
       <h3>{{ section.settings.section_header_text }}</h3>
       <div class="product-carousel__prev_next_box">
@@ -178,71 +35,21 @@
 </div>
 
 <script>
-  class ProductCard extends HTMLElement {
-    constructor() {
-      super();
-      this.productUrlElement = this.querySelector('.product_carousel__image_link');
-      this.sizesVariantElements = this.querySelectorAll('.product_carousel__card_size span') || [];
-      this.colorsVariantElements = this.querySelectorAll('.product_carousel__card_colors span.variant-color') || [];
-      this.colorSelectedElement = this.querySelector('.product_carousel__card_colors .variant-color.selected');
-
-      this.bindSizeVariantClickEvent();
-      this.bindColorVariantClickEvent();
-    }
-
-    bindSizeVariantClickEvent() {
-      this.sizesVariantElements.forEach((sizeVariantElement) => {
-        sizeVariantElement.addEventListener('click', this.handleOnSizeSelectedClick.bind(this));
-      });
-    }
-
-    bindColorVariantClickEvent() {
-      this.colorsVariantElements.forEach((colorVariantElement) => {
-        colorVariantElement.addEventListener('click', this.handleOnColorSelectedClick.bind(this));
-      });
-    }
-
-    handleOnSizeSelectedClick(event) {
-      console.log('ADD TO CART');
-    }
-
-    async handleOnColorSelectedClick(event) {
-      const selectedSizeElement = event.currentTarget;
-
-      console.log(selectedSizeElement.classList);
-      if (selectedSizeElement.classList.contains('selected')) {
-        return;
-      }
-
-      const variantId = selectedSizeElement.dataset.variantId;
-      this.colorSelectedElement = selectedSizeElement;
-
-      this.colorSelectedElement.classList.remove('selected');
-      this.colorSelectedElement.classList.add('selected');
-
-      try {
-        const response = await fetch(`${this.productUrlElement.href}?variant=${variantId}&section_id=card-product`);
-        const sectionResponse = await response.text();
-        const parser = new DOMParser();
-        const sectionDocument = parser.parseFromString(sectionResponse, 'text/html');
-        const newProductCard = sectionDocument.querySelector('product-card');
-        this.replaceWith(newProductCard);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-  }
-  customElements.define('product-card', ProductCard);
-</script>
-
-<script>
   document.addEventListener('DOMContentLoaded', () => {
-    const emblaNode = document.querySelector('.embla')
+    const emblaNode = document.querySelector('.embla-{{ section.id }}')
     const emblaViewport = emblaNode.querySelector('.embla-viewport')
-    const emblaPrevButton = document.querySelector('#product-carousel__prev_button')
-    const emblaNextButton = document.querySelector('#product-carousel__next_button')
+    const emblaPrevButton = emblaNode.querySelector('#product-carousel__prev_button')
+    const emblaNextButton = emblaNode.querySelector('#product-carousel__next_button')
 
-    const options = { loop: false, slidesToScroll: 2 }
+    const options = {
+      loop: false,
+      breakpoints: {
+        '(max-width: 500px)': { slidesToScroll: 1 },
+        '(min-width: 500px)': { slidesToScroll: 2 },
+        '(min-width: 900px)': { slidesToScroll: 3 },
+        '(min-width: 1100px)': { slidesToScroll: 4 },
+      },
+    }
     const emblaApi = EmblaCarousel(emblaViewport, options)
 
     const togglePrevNextBtnsState = () => {
@@ -270,6 +77,7 @@
       {
         "type": "text",
         "id": "section_header_text",
+        "default": "Carousel Title",
         "label": "Section Header"
       }, {
         "type": "collection",
