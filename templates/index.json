@@ -77,6 +77,13 @@
       "settings": {
       }
     },
+    "shape_carousel_collections_KVVNwB": {
+      "type": "shape-carousel-collections",
+      "settings": {
+        "shape_collection_header": "",
+        "collections_links": "diamond-navigation"
+      }
+    },
     "product_carousel_rmipzA": {
       "type": "product-carousel",
       "settings": {
@@ -177,6 +184,7 @@
   "order": [
     "image_banner_jVfcNT",
     "svg_text_column_8a7bL6",
+    "shape_carousel_collections_KVVNwB",
     "product_carousel_rmipzA",
     "featured_collection",
     "collapsible_content_TgQhkX"

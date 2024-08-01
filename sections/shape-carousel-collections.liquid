@@ -1,0 +1,108 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    margin: 5rem 0;
+  }
+</style>
+
+<div class="shape-carousel__page-container page-width-desktop">
+  {% if section.settings.shape_collection_header != blank %}
+    <div class="shape-carousel__title">
+      <h4>{{ section.settings.shape_collection_header }}</h4>
+    </div>
+  {% endif %}
+  <div class="shape-carousel__link-list embla">
+    <div class="embla-viewport">
+      <div class="embla__container">
+        {% for link in section.settings.collections_links.links %}
+          <a class="embla__slide" href="{{link.object.url}}">
+            <div class="shape-carousel__link-item">
+              <img src="{{ link.object.image | img_url: '300x300' }}" alt="{{ link.object.title }}">
+            </div>
+            <h4>{{ link.object.title }}</h4>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="shape-carousel__embla-controls">
+      <div class="shape-carousel__embla__dots"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const emblaRoot = document.querySelector('.shape-carousel__link-list.embla');
+    const emblaViewPort = emblaRoot.querySelector('.shape-carousel__link-list .embla-viewport');
+    const dotsNode = emblaRoot.querySelector('.shape-carousel__embla__dots')
+
+    const options = {
+      loop: false,
+      breakpoints: {
+        '(max-width: 500px)': { slidesToScroll: 4 },
+        '(min-width: 500px)': { slidesToScroll: 5 },
+        '(min-width: 900px)': { slidesToScroll: 4 },
+        '(min-width: 1100px)': { slidesToScroll: 4 },
+      }
+    }
+
+    const emblaApi = EmblaCarousel(emblaViewPort, options);
+
+    let dotNodes = []
+    const addDotBtnsWithClickHandlers = () => {
+      dotsNode.innerHTML = emblaApi
+        .scrollSnapList()
+        .map(() => '<button class="embla__dot" type="button"></button>')
+        .join('')
+
+      const scrollTo = (index) => {
+        emblaApi.scrollTo(index)
+      }
+
+      dotNodes = Array.from(dotsNode.querySelectorAll('.embla__dot'))
+      dotNodes.forEach((dotNode, index) => {
+        dotNode.addEventListener('click', () => scrollTo(index), false)
+      })
+    }
+
+    const toggleDotBtnsActive = () => {
+      const previous = emblaApi.previousScrollSnap()
+      const selected = emblaApi.selectedScrollSnap()
+      dotNodes[previous].classList.remove('embla__dot--selected')
+      dotNodes[selected].classList.add('embla__dot--selected')
+    }
+
+    emblaApi
+      .on('init', addDotBtnsWithClickHandlers)
+      .on('reInit', addDotBtnsWithClickHandlers)
+      .on('init', toggleDotBtnsActive)
+      .on('reInit', toggleDotBtnsActive)
+      .on('select', toggleDotBtnsActive)
+
+    dotsNode.innerHTML = '';
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Shape Collections",
+  "settings": [
+    {
+      "type": "text",
+      "id": "shape_collection_header",
+      "label": "Title",
+      "default": "Shape Colletion Title"
+    },
+    {
+      "type": "link_list",
+      "id": "collections_links",
+      "label": "Naavigation Links"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shape Carousel Collections",
+      "category": "Shape Carousel"
+    }
+  ]
+}
+{% endschema %}
