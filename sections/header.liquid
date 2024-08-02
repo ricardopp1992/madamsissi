@@ -12,6 +12,7 @@
 
 {{ 'section-product-carousel.css' |  asset_url | stylesheet_tag }}
 {{ 'section-shape-carousel-collection.css' |  asset_url | stylesheet_tag }}
+{{ 'section-collections-navigation-preview.css' |  asset_url | stylesheet_tag }}
 
 {%- if settings.cart_type == "drawer" -%}
   {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
@@ -110,6 +111,7 @@
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'product-carousel.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'collections-navigation-preview.js' | asset_url }}" defer="defer"></script>
 {%- if settings.cart_type == "drawer" -%}
   <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}

@@ -1,0 +1,183 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    margin: 8rem 0;
+  }
+  #shopify-section-{{ section.id }} > * {
+    box-sizing: border-box;
+  }
+</style>
+
+<div class="collections-navigation__contianer page-width-desktop page-width-tablet">
+  {% if section.settings.collection_navigation_header != blank %}
+    <h3>{{ section.settings.collection_navigation_header }}</h3>
+  {% endif %}
+  <collection-navigation-preview class="collections-navigation__box">
+    <div class="collections-navigation__left">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'collection' %}
+            <div class="collections-navigation__collection-item">
+              <span class="image-holder"
+                data-image-srcset="
+                  {%- if block.settings.collection_image.preview_image.width >= 550 -%}{{ block.settings.collection_image.preview_image | image_url: width: 550 }} 550w,{%- endif -%}
+                  {%- if block.settings.collection_image.preview_image.width >= 1100 -%}{{ block.settings.collection_image.preview_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                  {%- if block.settings.collection_image.preview_image.width >= 1445 -%}{{ block.settings.collection_image.preview_image | image_url: width: 1445 }} 1445w,{%- endif -%}
+                  {%- if block.settings.collection_image.preview_image.width >= 1680 -%}{{ block.settings.collection_image.preview_image | image_url: width: 1680 }} 1680w,{%- endif -%}
+                  {%- if block.settings.collection_image.preview_image.width >= 2048 -%}{{ block.settings.collection_image.preview_image | image_url: width: 2048 }} 2048w,{%- endif -%}
+                  {%- if block.settings.collection_image.preview_image.width >= 2200 -%}{{ block.settings.collection_image.preview_image | image_url: width: 2200 }} 2200w,{%- endif -%}
+                  {%- if block.settings.collection_image.preview_image.width >= 2890 -%}{{ block.settings.collection_image.preview_image | image_url: width: 2890 }} 2890w,{%- endif -%}
+                  {%- if block.settings.collection_image.preview_image.width >= 4096 -%}{{ block.settings.collection_image.preview_image | image_url: width: 4096 }} 4096w,{%- endif -%}
+                  {{ block.settings.collection_image.preview_image | image_url }} {{ block.settings.collection_image.preview_image.width }}w"
+                data-image-src="{{ block.settings.collection_image.preview_image | image_url: width: 1445 }}"
+                data-image-height="{{ 1100 | divided_by: block.settings.collection_image.preview_image.aspect_ratio | ceil }}"
+              >
+              </span>
+                  <a class="collections-navigation__collection-content {% if forloop.first %}active{% endif %}" href="{{ block.settings.collection.url }}">
+                <h4>{{ block.settings.collection_title }}</h4>
+                <p>{{ block.settings.collection_description }}</p>
+              </a>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+    <div class="collections-navigation__right">
+      <img
+        class="collections-navigation__right-image"
+        srcset="
+          {%- if section.blocks[0].settings.collection_image.preview_image.width >= 550 -%}{{ section.blocks[0].settings.collection_image.preview_image | image_url: width: 550 }} 550w,{%- endif -%}
+          {%- if section.blocks[0].settings.collection_image.preview_image.width >= 1100 -%}{{ section.blocks[0].settings.collection_image.preview_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+          {%- if section.blocks[0].settings.collection_image.preview_image.width >= 1445 -%}{{ section.blocks[0].settings.collection_image.preview_image | image_url: width: 1445 }} 1445w,{%- endif -%}
+          {%- if section.blocks[0].settings.collection_image.preview_image.width >= 1680 -%}{{ section.blocks[0].settings.collection_image.preview_image | image_url: width: 1680 }} 1680w,{%- endif -%}
+          {%- if section.blocks[0].settings.collection_image.preview_image.width >= 2048 -%}{{ section.blocks[0].settings.collection_image.preview_image | image_url: width: 2048 }} 2048w,{%- endif -%}
+          {%- if section.blocks[0].settings.collection_image.preview_image.width >= 2200 -%}{{ section.blocks[0].settings.collection_image.preview_image | image_url: width: 2200 }} 2200w,{%- endif -%}
+          {%- if section.blocks[0].settings.collection_image.preview_image.width >= 2890 -%}{{ section.blocks[0].settings.collection_image.preview_image | image_url: width: 2890 }} 2890w,{%- endif -%}
+          {%- if section.blocks[0].settings.collection_image.preview_image.width >= 4096 -%}{{ section.blocks[0].settings.collection_image.preview_image | image_url: width: 4096 }} 4096w,{%- endif -%}
+          {{ section.blocks[0].settings.collection_image.preview_image | image_url }} {{ section.blocks[0].settings.collection_image.preview_image.width }}w
+        "
+        sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+        src="{{ section.blocks[0].settings.collection_image.preview_image | image_url: width: 1445 }}"
+        alt="collection type"
+        loading="lazy"
+        width="100%"
+        height="{{ 1100 | divided_by: section.blocks[0].settings.collection_image.preview_image.aspect_ratio | ceil }}"
+      >
+    </div>
+  </collection-navigation-preview>
+
+  <div class="collections-navigation__container--mobile">
+    <div class="collections-navigation__arrows">
+      <div id="collections-navigation__prev-button">
+        {% render 'icon', icon: 'left-arrow' %}
+      </div>
+      <div id="collections-navigation__next-button">
+        {% render 'icon', icon: 'right-arrow' %}
+      </div>
+    </div>
+    <div class="collections-navigation__viewport">
+      <div class="collections-navigation__embla-container">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'collection' %}
+              <div class="collections-navigation__embla-slide">
+                <a href="{{ block.settings.collection.url }}">
+                  <img
+                    src="{{ block.settings.collection_image.preview_image | image_url: width: 1445 }}"
+                    alt="collection type"
+                    loading="lazy"
+                    width="100%"
+                    height="{{ 1100 | divided_by: block.settings.collection_image.preview_image.aspect_ratio | ceil }}"
+                  >
+                </a>
+                <div class="collections-navigation__content">
+                  <div class="collection-navigation__title_container">
+                    <h4>{{ block.settings.collection_title }}</h4>
+                  </div>
+                  <p>{{ block.settings.collection_description }}</p>
+                </div>
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const emblaRoot = document.querySelector('.collections-navigation__container--mobile');
+    const emblaViewport = emblaRoot.querySelector('.collections-navigation__viewport');
+    const emblaPrevButton = emblaRoot.querySelector('#collections-navigation__prev-button')
+    const emblaNextButton = emblaRoot.querySelector('#collections-navigation__next-button')
+
+    const options = {
+      loop: false,
+      slidesToScroll: 1,
+    };
+
+    const emblaApi = EmblaCarousel(emblaViewport, options);
+
+    const togglePrevNextBtnsState = () => {
+      if (emblaApi.canScrollPrev()) emblaPrevButton.removeAttribute('disabled')
+      else emblaPrevButton.setAttribute('disabled', 'true');
+
+      if (emblaApi.canScrollNext()) emblaNextButton.removeAttribute('disabled')
+      else emblaNextButton.setAttribute('disabled', 'true');
+    }
+
+    emblaApi
+      .on('select', togglePrevNextBtnsState)
+      .on('init', togglePrevNextBtnsState)
+      .on('reInit', togglePrevNextBtnsState);
+
+    emblaPrevButton.addEventListener('click', emblaApi.scrollPrev);
+    emblaNextButton.addEventListener('click', emblaApi.scrollNext);
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Collection Preview",
+    "settings": [
+      {
+        "type": "text",
+        "id": "collection_navigation_header",
+        "label": "Title"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "limit": 7,
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection",
+            "info": "Select a collection to display"
+          }, {
+            "type": "text",
+            "id": "collection_title",
+            "label": "Title",
+            "default": "Collection title"
+          }, {
+            "type": "text",
+            "id": "collection_description",
+            "label": "Description",
+            "default": "Collection description"
+          }, {
+            "type": "image_picker",
+            "id": "collection_image",
+            "label": "Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collection Preview",
+        "category": "Collection navigation"
+      }
+    ]
+  }
+{% endschema %}

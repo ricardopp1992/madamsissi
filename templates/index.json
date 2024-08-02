@@ -91,6 +91,56 @@
         "collection": "swimwear"
       }
     },
+    "collections_navigation_preview_J9bqUd": {
+      "type": "collections-navigation-preview",
+      "blocks": {
+        "collection_XAQWhr": {
+          "type": "collection",
+          "settings": {
+            "collection": "hibikini",
+            "collection_title": "Hibikini",
+            "collection_description": "Collection description for Hibikini",
+            "collection_image": "shopify:\/\/shop_images\/Screenshot2024-07-31at12.01.20PM.png"
+          }
+        },
+        "collection_RqQYDK": {
+          "type": "collection",
+          "settings": {
+            "collection": "aulala",
+            "collection_title": "Aulala Collection",
+            "collection_description": "This is the description for Aulala",
+            "collection_image": "shopify:\/\/shop_images\/Screenshot2024-07-28at8.59.54AM.png"
+          }
+        },
+        "collection_M8Grh9": {
+          "type": "collection",
+          "settings": {
+            "collection": "vidoya",
+            "collection_title": "Vidoya",
+            "collection_description": "Collection description for Vidoya",
+            "collection_image": "shopify:\/\/shop_images\/Screenshot2024-07-26at10.38.22AM.png"
+          }
+        },
+        "collection_g3CYRx": {
+          "type": "collection",
+          "settings": {
+            "collection": "one-piece",
+            "collection_title": "One Piece",
+            "collection_description": "Collection description for One Piece",
+            "collection_image": "shopify:\/\/shop_images\/Screenshot2024-07-28at9.03.59AM.png"
+          }
+        }
+      },
+      "block_order": [
+        "collection_XAQWhr",
+        "collection_RqQYDK",
+        "collection_M8Grh9",
+        "collection_g3CYRx"
+      ],
+      "settings": {
+        "collection_navigation_header": ""
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -186,6 +236,7 @@
     "svg_text_column_8a7bL6",
     "shape_carousel_collections_KVVNwB",
     "product_carousel_rmipzA",
+    "collections_navigation_preview_J9bqUd",
     "featured_collection",
     "collapsible_content_TgQhkX"
   ]

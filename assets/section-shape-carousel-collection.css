@@ -86,8 +86,8 @@
 
 @media screen and (min-width: 500px) {
   .shape-carousel__link-list img {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 130px;
   }
   .shape-carousel__link-list .embla__container {
     grid-auto-columns: 20%;

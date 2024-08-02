@@ -8,7 +8,7 @@
   }
 </style>
 
-<div class="product-carousel__container page-width-desktop">
+<div class="product-carousel__container page-width-tablet page-width-desktop">
   <div class="embla-{{ section.id }} carousel_container">
     <div class="product-carousel__header_and_buttons">
       <h3>{{ section.settings.section_header_text }}</h3>
@@ -53,20 +53,20 @@
     const emblaApi = EmblaCarousel(emblaViewport, options)
 
     const togglePrevNextBtnsState = () => {
-    if (emblaApi.canScrollPrev()) emblaPrevButton.removeAttribute('disabled')
-    else emblaPrevButton.setAttribute('disabled', 'true')
+      if (emblaApi.canScrollPrev()) emblaPrevButton.removeAttribute('disabled')
+      else emblaPrevButton.setAttribute('disabled', 'true');
 
-    if (emblaApi.canScrollNext()) emblaNextButton.removeAttribute('disabled')
-    else emblaNextButton.setAttribute('disabled', 'true')
-  }
+      if (emblaApi.canScrollNext()) emblaNextButton.removeAttribute('disabled')
+      else emblaNextButton.setAttribute('disabled', 'true');
+    }
 
-  emblaApi
-    .on('select', togglePrevNextBtnsState)
-    .on('init', togglePrevNextBtnsState)
-    .on('reInit', togglePrevNextBtnsState)
+    emblaApi
+      .on('select', togglePrevNextBtnsState)
+      .on('init', togglePrevNextBtnsState)
+      .on('reInit', togglePrevNextBtnsState);
 
-    emblaPrevButton.addEventListener('click', emblaApi.scrollPrev)
-    emblaNextButton.addEventListener('click', emblaApi.scrollNext)
+    emblaPrevButton.addEventListener('click', emblaApi.scrollPrev);
+    emblaNextButton.addEventListener('click', emblaApi.scrollNext);
   });
 </script>
 
