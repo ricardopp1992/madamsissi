@@ -116,21 +116,7 @@
 
     const emblaApi = EmblaCarousel(emblaViewport, options);
 
-    const togglePrevNextBtnsState = () => {
-      if (emblaApi.canScrollPrev()) emblaPrevButton.removeAttribute('disabled')
-      else emblaPrevButton.setAttribute('disabled', 'true');
-
-      if (emblaApi.canScrollNext()) emblaNextButton.removeAttribute('disabled')
-      else emblaNextButton.setAttribute('disabled', 'true');
-    }
-
-    emblaApi
-      .on('select', togglePrevNextBtnsState)
-      .on('init', togglePrevNextBtnsState)
-      .on('reInit', togglePrevNextBtnsState);
-
-    emblaPrevButton.addEventListener('click', emblaApi.scrollPrev);
-    emblaNextButton.addEventListener('click', emblaApi.scrollNext);
+    emblaPrevAndNextButtons(emblaApi, emblaPrevButton, emblaNextButton);
   });
 </script>
 
