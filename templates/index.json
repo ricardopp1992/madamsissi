@@ -141,6 +141,37 @@
         "collection_navigation_header": ""
       }
     },
+    "collection_carousel_rnKXtp": {
+      "type": "collection-carousel",
+      "blocks": {
+        "collection_wjpBrz": {
+          "type": "collection",
+          "settings": {
+            "collection": "hibikini"
+          }
+        },
+        "collection_8ajqKD": {
+          "type": "collection",
+          "settings": {
+            "collection": "trikinis"
+          }
+        },
+        "collection_a8p4nA": {
+          "type": "collection",
+          "settings": {
+            "collection": "one-piece"
+          }
+        }
+      },
+      "block_order": [
+        "collection_wjpBrz",
+        "collection_8ajqKD",
+        "collection_a8p4nA"
+      ],
+      "settings": {
+        "title": "Collection Carousel"
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -237,6 +268,7 @@
     "shape_carousel_collections_KVVNwB",
     "product_carousel_rmipzA",
     "collections_navigation_preview_J9bqUd",
+    "collection_carousel_rnKXtp",
     "featured_collection",
     "collapsible_content_TgQhkX"
   ]
