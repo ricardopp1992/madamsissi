@@ -13,11 +13,11 @@
   grid-auto-flow: column;
   grid-auto-columns: calc(95% - 1rem);
   gap: 1rem;
+  margin: 0 .5rem;
 }
 
 .collections-navigation__slide {
   width: 100%;
-  margin: 0 .5rem;
   position: relative;
   height: fit-content;
 }
@@ -64,6 +64,7 @@
   }
 
   .collections-carousel__embla__container {
-    grid-auto-columns: calc(33% - 1rem);
+    grid-auto-columns: calc(33% - .5rem);
+    margin: unset;
   }
 }

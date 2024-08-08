@@ -24,7 +24,7 @@
 }
 
 .carousel_container .embla-viewport {
-  margin: 0 .5rem;
+  padding: 0 1rem;
 }
 
 .carousel_container .embla__slide {
@@ -171,7 +171,9 @@ button:not([disabled]) {
 @media screen and (min-width: 500px) {
   .carousel_container .embla__container {
     grid-auto-columns: calc(50% - .5rem);
-
+  }
+  .carousel_container .embla-viewport {
+    padding: 0;
   }
 }
 
