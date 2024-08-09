@@ -11,6 +11,28 @@
   display: block;
 }
 
+.footer__blocks-wrapper {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: 100%;
+}
+
+.footer__blocks-wrapper .footer-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-block--menu ul .footer-block--menu__title {
+  border-bottom: 1px solid rgba(var(--color-foreground));
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+ul.footer-block__details-content {
+  width: 100%;
+}
+
 @media screen and (max-width: 749px) {
   .footer .grid {
     display: block;
@@ -33,10 +55,46 @@
   }
 }
 
+@media screen and (min-width: 500px) {
+  .footer__blocks-wrapper .footer-block {
+    flex-direction: row;
+  }
+
+  ul.footer-block__details-content {
+    width: 50%;
+    max-width: 40rem;
+  }
+
+  .footer__blocks-wrapper {
+    grid-auto-flow: column;
+    gap: 4rem;
+    grid-auto-columns: 40% 60%;
+  }
+}
+
 @media screen and (min-width: 750px) {
   .footer__content-top .grid {
     row-gap: 6rem;
     margin-bottom: 0;
+  }
+
+  .footer-block--menu ul .footer-block--menu__title {
+    display: none;
+  }
+
+  ul.footer-block__details-content {
+    width: 30%;
+  }
+
+  .footer__blocks-wrapper {
+    grid-auto-flow: column;
+    grid-auto-columns: 30% 70%;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .footer__blocks-wrapper {
+    gap: 0;
   }
 }
 
@@ -136,6 +194,13 @@
   margin-top: 0;
 }
 
+.footer-block--menu {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 30% 30%;
+  margin-top: 4rem;
+}
+
 @media screen and (max-width: 749px) {
   .footer-block.footer-block--menu:only-child {
     text-align: left;
@@ -146,6 +211,10 @@
   .footer-block--newsletter {
     flex-wrap: nowrap;
     justify-content: center;
+  }
+
+  .footer-block--menu {
+    margin-top: 0;
   }
 }
 
@@ -369,6 +438,7 @@
   .footer-block__details-content .list-menu__item--link {
     display: inline-block;
     font-size: 1.4rem;
+    white-space: nowrap;
   }
 
   .footer-block__details-content > :first-child .list-menu__item--link {
@@ -413,7 +483,10 @@
 }
 
 .footer-block__brand-info {
-  text-align: left;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer-block:only-child .footer-block__brand-info {
@@ -471,6 +544,13 @@
 .policies li a {
   padding: 0.6rem 0;
   display: block;
+}
+
+@media screen and (min-width: 500px) {
+  .footer-block__brand-info {
+    display: block;
+    text-align: left;
+  }
 }
 
 @media screen and (min-width: 750px) {

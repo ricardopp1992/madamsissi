@@ -13,7 +13,7 @@
   grid-auto-flow: column;
   grid-auto-columns: calc(95% - 1rem);
   gap: 1rem;
-  margin: 0 .5rem;
+  margin: 0 1rem;
 }
 
 .collections-navigation__slide {
