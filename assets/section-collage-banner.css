@@ -1,0 +1,133 @@
+.collage-banner__container {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1.5rem;
+}
+
+.collage-banner__image-wrapper {
+  max-width: 100%;
+  position: relative;
+  border: 4px solid rgb(var(--color-button));
+  border-radius: 8px;
+}
+
+.collage-banner__image-wrapper:nth-child(1) {
+  grid-row: span 2;
+}
+
+.collage-banner__image-wrapper:nth-child(2),
+.collage-banner__image-wrapper:nth-child(3) {
+  grid-column-start: 2;
+}
+
+.collage-banner__image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: flex;
+  border-radius: 4px;
+}
+
+.collage-banner__content {
+  position: absolute;
+  right: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-27%, -70%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.collage-banner__image-wrapper:nth-child(1) .collage-banner__content {
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: unset;
+  transform: unset;
+  width: 100%;
+  height: 100%;
+}
+
+.collage-banner__content a.button::after {
+  box-shadow: unset;
+}
+
+.collage-banner__content a.button {
+  background-color: rgb(var(--color-foreground));
+  color: rgb(var(--color-button));
+  white-space: nowrap;
+}
+
+.collage-banner__content a svg {
+  display: none;
+}
+
+.collage-banner__content h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.collage-banner__first-collage-item h2 {
+  font-size: 4rem;
+}
+
+.collage-banner__first-collage-item h2,
+.collage-banner__first-collage-item p {
+  color: rgb(var(--color-button));
+  text-align: center;
+}
+
+.collage-banner__first-collage-item a {
+  position: absolute;
+  bottom: 10%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.collage-banner__first-collage-item a svg {
+  display: initial;
+  stroke: rgb(var(--color-button));
+  fill: rgb(var(--color-button));
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+  .collage-banner__content {
+    padding: 0 1rem;
+  }
+
+  .collage-banner__content h2 {
+    font-size: 1.5rem;
+  }
+
+  .collage-banner__first-collage-item h2 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .collage-banner__container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .collage-banner__content {
+    width: 40rem;
+  }
+
+  .collage-banner__content a.button {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 1030px) {
+  .collage-banner__content {
+    transform: translate(-50%, -70%);
+  }
+}

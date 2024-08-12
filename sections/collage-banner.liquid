@@ -1,0 +1,107 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    margin: 5rem 0;
+  }
+
+  #shopify-section-{{ section.id }} * {
+    box-sizing: border-box;
+  }
+</style>
+
+<div class="collage-banner__container page-width-tablet page-width-desktop">
+  {% for block in section.blocks %}
+    {% case block.type %}
+    {% when 'collage-banner' %}
+        <div class="collage-banner__image-wrapper">
+          <img
+            srcset="{%- if block.settings.image.width >= 550 -%}{{ block.settings.image | image_url: width: 550 }} 550w,{%- endif -%}
+                {%- if block.settings.image.width >= 1100 -%}{{ block.settings.image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                {%- if block.settings.image.width >= 1445 -%}{{ block.settings.image | image_url: width: 1445 }} 1445w,{%- endif -%}
+                {%- if block.settings.image.width >= 1680 -%}{{ block.settings.image | image_url: width: 1680 }} 1680w,{%- endif -%}
+                {%- if block.settings.image.width >= 2048 -%}{{ block.settings.image | image_url: width: 2048 }} 2048w,{%- endif -%}
+                {%- if block.settings.image.width >= 2200 -%}{{ block.settings.image | image_url: width: 2200 }} 2200w,{%- endif -%}
+                {%- if block.settings.image.width >= 2890 -%}{{ block.settings.image | image_url: width: 2890 }} 2890w,{%- endif -%}
+                {%- if block.settings.image.width >= 4096 -%}{{ block.settings.image | image_url: width: 4096 }} 4096w,{%- endif -%}
+                {{ block.settings.image | image_url }} {{ block.settings.image.width }}w"
+            sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+            src="{{ block.settings.image | image_url: width: 1445 }}"
+            alt="{{ block.settings.image.alt | escape }}"
+            loading="lazy"
+            width="500"
+            height="{{ 500 | divided_by: block.settings.image.aspect_ratio | ceil }}"
+          />
+
+          <div style="--content-color: {{ block.settings.content_color }};" class="collage-banner__content {% if forloop.first %}collage-banner__first-collage-item{% endif %}">
+            <h2>{{ block.settings.title }}</h2>
+            <p>{{ block.settings.subtitle }}</p>
+            <a class="button" href="{{ block.settings.link }}" class="btn">
+              {% render 'icon', icon: 'crow' %}
+              {{ block.settings.button }}
+            </a>
+          </div>
+        </div>
+    {% else %}
+
+      {% endcase %}
+    {% endfor %}
+  </div>
+
+  {% schema %}
+    {
+      "name": "Collage Banner",
+      "tag": "section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Collage Banner Title",
+          "default": "Collage Banner"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "collage-banner",
+          "name": "Collage Banner",
+          "limit": 3,
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Image"
+            },
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title"
+            },
+            {
+              "type": "text",
+              "id": "subtitle",
+              "label": "Subtitle"
+            },
+            {
+              "type": "text",
+              "id": "button",
+              "label": "Button"
+            },
+            {
+              "type": "url",
+              "id": "link",
+              "label": "Link"
+            },
+            {
+              "type": "color",
+              "id": "content_color",
+              "label": "Content Color"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Collage Banner",
+          "category": "Collage Banner"
+        }
+      ]
+    }
+  {% endschema %}
