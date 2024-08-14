@@ -184,6 +184,74 @@
         "title": "Colleciones Destacadas"
       }
     },
+    "collage_banner_hJcmpC": {
+      "type": "collage-banner",
+      "blocks": {
+        "collage_banner_3LBfpr": {
+          "type": "collage-banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bikinis_banner.png",
+            "title": "Temporada de Verano",
+            "subtitle": "A nice banner text here A nice banner text here",
+            "button": "VER TRAJES DE BAÑO",
+            "link": "",
+            "content_color": ""
+          }
+        },
+        "collage_banner_9TDqj8": {
+          "type": "collage-banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cb_2.png",
+            "title": "Temporada de Verano",
+            "subtitle": "A nice banner text here",
+            "button": "VER COSMÉTICOS",
+            "link": "",
+            "content_color": ""
+          }
+        },
+        "collage_banner_QypUqG": {
+          "type": "collage-banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cb_2.png",
+            "title": "Temporada de Verano",
+            "subtitle": "A nice banner text here",
+            "button": "VER COSMÉTICOS",
+            "link": "",
+            "content_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "collage_banner_3LBfpr",
+        "collage_banner_9TDqj8",
+        "collage_banner_QypUqG"
+      ],
+      "settings": {
+        "title": "Collage Banner"
+      }
+    },
+    "instagram_feed_KCGtYR": {
+      "type": "instagram-feed",
+      "blocks": {
+        "instafeed_app_block_BUaQc9": {
+          "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "alignment": "center",
+            "background_color": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_BUaQc9"
+      ],
+      "settings": {
+        "title": "El Estilo Madam Sissi en Instagram",
+        "subtitle": "Siguenos en nuestras redes y comparte tu experiencia."
+      }
+    },
     "map_store_location_jem9Qa": {
       "type": "map-store-location",
       "blocks": {
@@ -211,6 +279,48 @@
         "store_image": "shopify:\/\/shop_images\/image_169.png",
         "logo": "shopify:\/\/shop_images\/Logos_MS-01.svg"
       }
+    },
+    "newsletter_QkiHMz": {
+      "type": "newsletter",
+      "blocks": {
+        "logo_tAFtk4": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/Logos_MS-06.svg"
+          }
+        },
+        "heading_69teKt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Suscribete a Nuestro Newsletter",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_B4tRzC": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Mantente actualizada con todos nuestros productos y recibe promociones exclusivas<\/p>"
+          }
+        },
+        "email_form_dUAEWG": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "logo_tAFtk4",
+        "heading_69teKt",
+        "paragraph_B4tRzC",
+        "email_form_dUAEWG"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "background_image": "shopify:\/\/shop_images\/bg-newsletter_31fbcc5e-a7e6-486c-a475-3fbcfff98023.png",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
@@ -221,6 +331,9 @@
     "wide_banner_rKTG8i",
     "collections_navigation_preview_J9bqUd",
     "collection_carousel_rnKXtp",
-    "map_store_location_jem9Qa"
+    "collage_banner_hJcmpC",
+    "instagram_feed_KCGtYR",
+    "map_store_location_jem9Qa",
+    "newsletter_QkiHMz"
   ]
 }

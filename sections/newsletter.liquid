@@ -15,15 +15,37 @@
   }
 {%- endstyle -%}
 
+
 <div class="newsletter center {% if section.settings.full_width == false %}newsletter--narrow page-width{% endif %}">
-  <div class="newsletter__wrapper color-{{ section.settings.color_scheme }} gradient content-container isolate{% if section.settings.full_width %} content-container--full-width{% endif %} section-{{ section.id }}-padding">
-    {%- for block in section.blocks -%}
+  {% if section.settings.background_image %}
+    <div class="newsletter_background-image">
+      <img
+      src="{{ section.settings.background_image | img_url: 'master' }}"
+      alt="background logo"
+      >
+    </div>
+  {% endif %}
+  <div class="{% if section.settings.full_width %} newslettter_container-boxing content-container--full-width{% endif %} section-{{ section.id }}-padding">
+  {%- for block in section.blocks -%}
       {%- case block.type -%}
         {%- when '@app' -%}
           {% render block %}
+        {%- when 'logo' -%}
+          <div>
+            <img
+              src="{{ block.settings.logo | img_url: 'master' }}"
+              alt="{{ block.settings.logo.alt | escape }}"
+              class="newsletter__logo{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {{ block.shopify_attributes }}
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+              {% endif %}
+            >
+          </div>
         {%- when 'heading' -%}
           <h2
-            class="inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            class=" newsletter_heading inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {{ block.shopify_attributes }}
             {% if settings.animations_reveal_on_scroll %}
               data-cascade
@@ -48,7 +70,7 @@
             {% form 'customer', class: 'newsletter-form' %}
               <input type="hidden" name="contact[tags]" value="newsletter">
               <div
-                class="newsletter-form__field-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                class="newsletter_box-inputs newsletter-form__field-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
                   style="--animation-order: {{ forloop.index }};"
@@ -59,7 +81,7 @@
                     id="NewsletterForm--{{ section.id }}"
                     type="email"
                     name="contact[email]"
-                    class="field__input"
+                    class="field__input newsletter-form__input"
                     value="{{ form.email }}"
                     aria-required="true"
                     autocorrect="off"
@@ -78,16 +100,14 @@
                   <label class="field__label" for="NewsletterForm--{{ section.id }}">
                     {{ 'newsletter.label' | t }}
                   </label>
-                  <button
-                    type="submit"
-                    class="newsletter-form__button field__button"
-                    name="commit"
-                    id="Subscribe"
-                    aria-label="{{ 'newsletter.button_label' | t }}"
-                  >
-                    {% render 'icon-arrow' %}
-                  </button>
                 </div>
+                <button
+                  type="submit"
+                  class="newsletter-form__submit btn btn--newsletter "
+                  aria-label="{{ 'newsletter.submit' | t }}"
+                >
+                Sucribirse
+                </button>
                 {%- if form.errors -%}
                   <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
                     {%- render 'icon-error' -%}
@@ -128,6 +148,11 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "scheme-1"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "t:sections.all.background_image.label"
     },
     {
       "type": "checkbox",
@@ -207,6 +232,17 @@
       ]
     },
     {
+      "type": "logo",
+      "name": "Logo Image ",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "t:sections.newsletter.blocks.logo.settings.logo.label"
+        }
+      ]
+    },
+    {
       "type": "paragraph",
       "name": "t:sections.newsletter.blocks.paragraph.name",
       "limit": 1,
@@ -232,6 +268,9 @@
     {
       "name": "t:sections.newsletter.presets.name",
       "blocks": [
+        {
+          "type": "logo"
+        },
         {
           "type": "heading"
         },
