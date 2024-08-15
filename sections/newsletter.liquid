@@ -2,6 +2,25 @@
 {{ 'newsletter-section.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
+  #shopify-section-{{ section.id }} {
+    background-color: #000000;
+    position: relative;
+    padding: 3rem 0;
+  }
+
+  #shopify-section-{{ section.id }}::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    background-image: url("{{  'light-pattern-g.png' | asset_url }}");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
@@ -17,14 +36,6 @@
 
 
 <div class="newsletter center {% if section.settings.full_width == false %}newsletter--narrow page-width{% endif %}">
-  {% if section.settings.background_image %}
-    <div class="newsletter_background-image">
-      <img
-      src="{{ section.settings.background_image | img_url: 'master' }}"
-      alt="background logo"
-      >
-    </div>
-  {% endif %}
   <div class="{% if section.settings.full_width %} newslettter_container-boxing content-container--full-width{% endif %} section-{{ section.id }}-padding">
   {%- for block in section.blocks -%}
       {%- case block.type -%}
@@ -106,7 +117,7 @@
                   class="newsletter-form__submit btn btn--newsletter "
                   aria-label="{{ 'newsletter.submit' | t }}"
                 >
-                Sucribirse
+                  Sucribirse
                 </button>
                 {%- if form.errors -%}
                   <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
@@ -148,11 +159,6 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "scheme-1"
-    },
-    {
-      "type": "image_picker",
-      "id": "background_image",
-      "label": "t:sections.all.background_image.label"
     },
     {
       "type": "checkbox",

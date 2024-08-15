@@ -316,10 +316,10 @@
       ],
       "settings": {
         "color_scheme": "",
-        "background_image": "shopify:\/\/shop_images\/bg-newsletter_31fbcc5e-a7e6-486c-a475-3fbcfff98023.png",
-        "full_width": true,
+        "background_image": "shopify:\/\/shop_images\/black_gold_pattern.png",
+        "full_width": false,
         "padding_top": 40,
-        "padding_bottom": 0
+        "padding_bottom": 40
       }
     }
   },
