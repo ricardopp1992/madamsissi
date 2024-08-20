@@ -10,8 +10,14 @@
   flex: 1;
 }
 
+.accordion .summary__title h2 {
+  color: rgb(var(--color-button));
+}
+
+
 .accordion .summary__title + .icon-caret {
   height: calc(var(--font-heading-scale) * 0.6rem);
+  stroke: rgb(var(--color-button));
 }
 
 .accordion + .accordion {
@@ -22,8 +28,8 @@
 .accordion {
   margin-top: 2.5rem;
   margin-bottom: 0;
-  border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
-  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  /* border-top: 0.1rem solid rgba(var(--color-button), 0.4); */
+  border-bottom: 0.1rem solid rgba(var(--color-button), 0.4);
 }
 
 .accordion__title {

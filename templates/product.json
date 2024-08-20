@@ -15,8 +15,17 @@
           "settings": {
           }
         },
+        "price_availability_share_HdxMkJ": {
+          "type": "price_availability_share",
+          "settings": {
+            "show_price": true,
+            "show_availability": true,
+            "show_share": true
+          }
+        },
         "price": {
           "type": "price",
+          "disabled": true,
           "settings": {
           }
         },
@@ -35,7 +44,7 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
           }
         },
@@ -44,22 +53,46 @@
           "settings": {
           }
         },
-        "share": {
-          "type": "share",
+        "collapsible_tab_mpmVC8": {
+          "type": "collapsible_tab",
           "settings": {
-            "share_label": "Share"
+            "heading": "Descripcion",
+            "icon": "none",
+            "content": "<p>This is a product description where it explain a lot of stuff about the product.<br\/><br\/>Which are the key features, where is made, etc.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_X6ABkY": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Guia de talla",
+            "icon": "none",
+            "content": "",
+            "page": ""
+          }
+        },
+        "collapsible_tab_zQrLPi": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Envio",
+            "icon": "none",
+            "content": "",
+            "page": ""
           }
         }
       },
       "block_order": [
         "vendor",
         "title",
+        "price_availability_share_HdxMkJ",
         "price",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share"
+        "collapsible_tab_mpmVC8",
+        "collapsible_tab_X6ABkY",
+        "collapsible_tab_zQrLPi"
       ],
       "settings": {
         "enable_sticky_info": true,

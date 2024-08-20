@@ -376,6 +376,21 @@ a.product__text {
   text-align: center;
 }
 
+.price-availability-share__container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 55% 10% 35%;
+  align-items: center;
+  border-bottom: 1px solid rgb(var(--color-button));
+}
+.price-availability-share__container .product__inventory {
+  justify-content: center;
+  white-space: nowrap;
+  color: #3ed660;
+  border: 1px solid;
+  border-radius: 4px;
+}
+
 /* Product media */
 .product__media-list video {
   border-radius: calc(var(--media-radius) - var(--media-border-width));
