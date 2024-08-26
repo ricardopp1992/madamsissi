@@ -379,7 +379,8 @@ a.product__text {
 .price-availability-share__container {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 55% 10% 35%;
+  grid-auto-columns: 49% 10% 35%;
+  gap: 1rem;
   align-items: center;
   border-bottom: 1px solid rgb(var(--color-button));
 }
@@ -389,6 +390,16 @@ a.product__text {
   color: #3ed660;
   border: 1px solid;
   border-radius: 4px;
+}
+
+.price-availability-share__share {
+  border: 1px solid rgb(var(--color-button));
+  padding: 0 .5rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--media-radius);
 }
 
 /* Product media */
