@@ -53,25 +53,48 @@
   }
 </style>
 
-<div class="svg-text__contianer">
-  {% for block in section.blocks %}
-    {% case block.type %}
-      {% when 'svg_text' %}
-        <div class="svg-text__content">
-          {% render 'icon', icon: block.settings.svg_file_icon %}
-          <p> {{ block.settings.description }} </p>
-        </div>
-      {% else %}
-    {% endcase %}
-  {% endfor %}
-</div>
-  <hr class="svg-text__devider" />
 
+<div id="shopify-section" class="color-{{ section.settings.color_scheme }}">
+  <div class="svg-text__contianer color-{{ section.settings.color_scheme }}">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'svg_text' %}
+          <div class="svg-text__content" >
+            {% render 'icon', icon: block.settings.svg_file_icon %}
+            <p> {{ block.settings.description }} </p>
+          </div>
+        {% else %}
+      {% endcase %}
+    {% endfor %}
+  </div>
+    <hr class="svg-text__devider visibility-{{ section.settings.divider_visibility }}" />
+  </div>
 {% schema %}
 {
   "name": "Features Multi Columns",
   "settings": [
-    
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "select",
+      "id": "divider_visibility",
+      "label": "Divider Visibility",
+      "default": "visible",
+      "options": [
+        {
+          "value": "visible",
+          "label": "Visible"
+        },
+        {
+          "value": "hidden",
+          "label": "Hidden"
+        }
+      ] 
+    }
   ],
   "blocks": [
     {
@@ -101,6 +124,21 @@
           "type": "text",
           "id": "description",
           "label": "Description"
+        },
+        {
+        "type": "select",
+        "id": "color_svg",
+        "label": "Color Icon",
+        "options": [
+          {
+            "value": "white",
+            "label": "White"
+          },
+          {
+            "value": "brown",
+            "label": "Brown"
+          }
+        ]
         }
       ]
     }

@@ -127,10 +127,49 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "svg_text_column_LhWef9": {
+      "type": "svg-text-column",
+      "blocks": {
+        "svg_text_m9EL7P": {
+          "type": "svg_text",
+          "settings": {
+            "svg_file_icon": "box",
+            "description": "Entraga Gratuita a Partir de $50",
+            "color_svg": "white"
+          }
+        },
+        "svg_text_pqqKVy": {
+          "type": "svg_text",
+          "settings": {
+            "svg_file_icon": "secure",
+            "description": "Nuestros metodos de pago son100% Seguro",
+            "color_svg": "white"
+          }
+        },
+        "svg_text_zYERJj": {
+          "type": "svg_text",
+          "settings": {
+            "svg_file_icon": "back",
+            "description": "Dentro de los 30 días siguientes a la fecha de entrega.",
+            "color_svg": "white"
+          }
+        }
+      },
+      "block_order": [
+        "svg_text_m9EL7P",
+        "svg_text_pqqKVy",
+        "svg_text_zYERJj"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "divider_visibility": "hidden"
+      }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "related-products",
+    "svg_text_column_LhWef9"
   ]
 }
