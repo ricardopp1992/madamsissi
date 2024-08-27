@@ -27,11 +27,17 @@
   .svg-text__contianer svg {
     width: 60px;
     min-height: 3rem;
-    stroke: rgb(var(--color-button));
+    /* stroke: rgb(var(--color-button)); */
   }
 
-  .svg-text__contianer svg[data-name="back"], .svg-text__contianer svg[data-name="secure"] {
+  /* .svg-text__contianer svg[data-name="back"], .svg-text__contianer svg[data-name="secure"] {
     fill: rgb(var(--color-button));
+  } */
+  .is_white svg {
+    fill: white;
+  }
+  .is_brown svg{
+    fill: brown;
   }
 
   .svg-text__devider {
@@ -49,17 +55,17 @@
     }
     .svg-text__devider {
       width: 64%;
-  }
+    }
   }
 </style>
 
 
-<div id="shopify-section" class="color-{{ section.settings.color_scheme }}">
-  <div class="svg-text__contianer color-{{ section.settings.color_scheme }}">
+<div id="shopify-section" class="color-{{ section.settings.color_scheme }}" >
+  <div class="svg-text__contianer color-{{ section.settings.color_scheme }}"style="padding-top: 4rem;">
     {% for block in section.blocks %}
       {% case block.type %}
         {% when 'svg_text' %}
-          <div class="svg-text__content" >
+          <div class="svg-text__content {% if block.settings.color_svg.white%} is_white {% endif %}" >
             {% render 'icon', icon: block.settings.svg_file_icon %}
             <p> {{ block.settings.description }} </p>
           </div>

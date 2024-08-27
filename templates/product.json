@@ -118,7 +118,7 @@
         "products_to_show": 4,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
-        "image_ratio": "square",
+        "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
@@ -144,7 +144,7 @@
           "settings": {
             "svg_file_icon": "secure",
             "description": "Nuestros metodos de pago son100% Seguro",
-            "color_svg": "white"
+            "color_svg": "false"
           }
         },
         "svg_text_zYERJj": {
@@ -152,7 +152,7 @@
           "settings": {
             "svg_file_icon": "back",
             "description": "Dentro de los 30 días siguientes a la fecha de entrega.",
-            "color_svg": "white"
+            "color_svg": "false"
           }
         }
       },
@@ -165,11 +165,74 @@
         "color_scheme": "scheme-3",
         "divider_visibility": "hidden"
       }
+    },
+    "featured_collection_kWabnG": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured collection",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "two-pieces",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collection_list_HzBGnx": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_T4tbpy": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "swimwear"
+          }
+        },
+        "featured_collection_EnXyHL": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hibikini"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_T4tbpy",
+        "featured_collection_EnXyHL"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 2,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "related-products",
-    "svg_text_column_LhWef9"
+    "svg_text_column_LhWef9",
+    "featured_collection_kWabnG",
+    "collection_list_HzBGnx"
   ]
 }
