@@ -144,7 +144,7 @@
           "settings": {
             "svg_file_icon": "secure",
             "description": "Nuestros metodos de pago son100% Seguro",
-            "color_svg": "false"
+            "color_svg": "white"
           }
         },
         "svg_text_zYERJj": {
@@ -152,7 +152,7 @@
           "settings": {
             "svg_file_icon": "back",
             "description": "Dentro de los 30 días siguientes a la fecha de entrega.",
-            "color_svg": "false"
+            "color_svg": "white"
           }
         }
       },
@@ -194,6 +194,17 @@
         "padding_bottom": 36
       }
     },
+    "size_guide_product_XbLbfM": {
+      "type": "size_guide_product",
+      "settings": {
+        "heading": "Como elegir tu talle",
+        "subheading-1": "Pulgadas",
+        "subheading-2": "Centimetros",
+        "table": "pulgadas",
+        "image-1": "shopify:\/\/shop_images\/size-guide-cm.png",
+        "little-text": "**Utilice la tabla anterior como guía general."
+      }
+    },
     "collection_list_HzBGnx": {
       "type": "collection-list",
       "blocks": {
@@ -233,6 +244,7 @@
     "related-products",
     "svg_text_column_LhWef9",
     "featured_collection_kWabnG",
+    "size_guide_product_XbLbfM",
     "collection_list_HzBGnx"
   ]
 }

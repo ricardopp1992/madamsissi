@@ -1,10 +1,91 @@
+{{ 'size-guide.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width">
+  <div class="container">
+    <h2 class="size-guide_title">{{ section.settings.heading }}</h2>
+    <div>
+      <div class="select-size_box">
+        <p>{{ section.settings.subheading-1 }}</p>
+        <p>{{ section.settings.subheading-2 }}</p>
+      </div>
+      <div>
+        {% if section.settings.image-1  != blank %}
+          <img src="{{ section.settings.image-1 | img_url:'master' }}" 
+          alt="size guide"
+          class="image-size"
+          >
+        {% endif %}
+        {% if section.settings.image-2  != blank %}
+          <img src="{{ section.settings.image-2 | img_url: 'master' }}" 
+          alt="size guide"
+          >
+        {% endif %}
+      </div>
+      <div>
+        <p class="size-guide_little-text">{{ section.settings.little-text }}</p>
+      </div>
+    <div>
+  </div>
+</div>
+
+
+
 {%  schema  %} 
 {
   "name": "Size Guide Product",
   "tag": "section",
   "class": "section",
   "settings": [
-  
-  ]
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading-1",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "subheading-2",
+      "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "table",
+      "label": "Guia de talla",
+      "options": [
+        {
+          "value": "pulgadas",
+          "label": "Pulgadas"
+        },
+        {
+          "value": "centimetros",
+          "label": "Centimetros"
+        }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "image-1",
+      "label": "image centimetros"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-2",
+      "label": "image pulgadas"
+    },
+    {
+      "type": "text",
+      "id": "little-text",
+      "label": "Little Text"
+    }
+  ],
+    "presets": [
+      {
+        "name": "Guide Table"
+      }
+    ]
 }
 {% endschema %}

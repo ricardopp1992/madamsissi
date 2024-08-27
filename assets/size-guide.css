@@ -1,0 +1,16 @@
+.size-guide_title{
+  margin: 0;
+  font-size: 2.5rem;
+}
+.select-size_box{
+  display: flex;
+  gap: 1rem;
+}
+.image-size{
+  width: 100%;
+}
+.size-guide_little-text{
+  margin: 0;
+  margin-bottom: 2rem;
+  font-size: 13px;
+}
