@@ -14,23 +14,73 @@
         "products_per_page": 16,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
+        "image_ratio": "portrait",
         "image_shape": "default",
-        "show_secondary_image": false,
+        "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
         "enable_filtering": true,
-        "filter_type": "horizontal",
+        "filter_type": "vertical",
         "enable_sorting": true,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "collage_banner_46hzpB": {
+      "type": "collage-banner",
+      "blocks": {
+        "collage_banner_6pXHnU": {
+          "type": "collage-banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC01698.jpg",
+            "title": "Summer collection 2024",
+            "title_color": "#ffffff",
+            "button": "Bikini #2567 Collection",
+            "button_color": "#a4793e",
+            "text_button_color": "#ffffff",
+            "link": "shopify:\/\/collections\/hibikini"
+          }
+        },
+        "collage_banner_zPigpP": {
+          "type": "collage-banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC01525_a70abf4a-e8f1-4976-acb7-f76bdf54db5a.png",
+            "title": "More Color this summer",
+            "title_color": "#ffffff",
+            "button": "Colorful Bikini",
+            "button_color": "#a4793e",
+            "text_button_color": "#ffffff",
+            "link": "shopify:\/\/products\/flower-trikini-hibikini"
+          }
+        },
+        "collage_banner_gA4FMV": {
+          "type": "collage-banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC03590.png",
+            "title": "Sexy Swimwear",
+            "title_color": "#ffffff",
+            "button": "Sexy Swimwear",
+            "button_color": "#a4793e",
+            "text_button_color": "#ffffff",
+            "link": "shopify:\/\/products\/two-pieces-craftship-aulala"
+          }
+        }
+      },
+      "block_order": [
+        "collage_banner_6pXHnU",
+        "collage_banner_zPigpP",
+        "collage_banner_gA4FMV"
+      ],
+      "settings": {
+        "title": "Collage Banner"
+      }
     }
   },
   "order": [
     "banner",
-    "product-grid"
+    "product-grid",
+    "collage_banner_46hzpB"
   ]
 }

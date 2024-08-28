@@ -412,10 +412,18 @@
 }
 
 .button--secondary {
-  background: transparent;
+  background: #D9BE76;
   color: #fff;
 }
-
+.button--secondary:hover {
+  background: #A4793E;
+  --color-button-text: none;
+  color: black;
+}
+.button--primary:hover {
+  background: #D9BE76;
+  --color-button-text: none;
+}
 @media screen and (min-width: 750px) {
   .banner__box {
     padding: 4rem 3.5rem;
@@ -498,6 +506,7 @@
 
 .banner__heading {
   margin-bottom: 0;
+  color: white;
 }
 
 .banner__box .banner__heading + * {

@@ -64,9 +64,12 @@
   bottom: 1rem;
   z-index: 2;
   width: 100%;
-  background: rgb(var(--color-button), 60%);
+  background: rgb(70,71,74, 60%);
   padding: 2rem 0;
-  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .product_carousel__card_size .product_carousel__add-cart-variant {
@@ -87,15 +90,15 @@
 
 .product_carousel__card_info .product_carousel__card_colors {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   gap: 2rem;
 }
 
 .product_carousel__card_info .product_carousel__card_colors span {
   display: flex;
   border-radius: 50%;
-  height: 4rem;
-  width: 4rem;
+  height: 3rem;
+  width: 3rem;
   cursor: pointer;
 }
 
@@ -124,7 +127,7 @@
 }
 
 .product_carousel__card_colors .selected {
-  border: 3px solid rgb(var(--color-button));
+  border: 2px solid #D9BE76;
 }
 
 .product_carousel__card_info h4 {
@@ -149,10 +152,10 @@
 }
 
 .product-carousel__prev_next_box button {
-  height: 27px;
-  width: 22px;
+  height: 35px;
+  width: 26px;
   border: 1px solid rgb(var(--color-button));
-  margin: 0 0.5rem;
+  margin: 0 0.1rem;
   background: transparent;
   border-radius: 5px;
 }

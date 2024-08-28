@@ -1,7 +1,31 @@
 .size-guide_title{
   margin: 0;
-  font-size: 2.5rem;
+  font-size: calc(var(--font-heading-scale)* 4rem);
 }
+.size-guide__button{
+  padding: 1rem 2rem;
+  background: transparent;
+  border: none;
+  margin: 1rem 0;
+}
+.size-guide__button:hover{
+  background:rgb(217 190 118);
+  border-radius: 4px;
+}
+#btn1::after{
+  text-decoration: underline;
+  color: rgb(var(--color-button));
+  font-weight: 700;
+}
+#btn2.active{
+  text-decoration: underline;
+  color: rgb(var(--color-button));
+  font-weight: 700;
+}
+.hide{
+  display: none;
+}
+
 .select-size_box{
   display: flex;
   gap: 1rem;

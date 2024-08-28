@@ -3,15 +3,65 @@
     "main": {
       "type": "main-list-collections",
       "settings": {
-        "title": "Collections",
+        "title": "Explore our summer collections",
         "sort": "alphabetical",
-        "image_ratio": "square",
+        "image_ratio": "portrait",
         "columns_desktop": 3,
         "columns_mobile": "2"
+      }
+    },
+    "collage_banner_LcKL4e": {
+      "type": "collage-banner",
+      "blocks": {
+        "collage_banner_bkezfi": {
+          "type": "collage-banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC01698.jpg",
+            "title": "Summer Collection 2024",
+            "title_color": "#ffffff",
+            "button": "Bikinis #4998 Collection",
+            "button_color": "#a4793e",
+            "text_button_color": "#ffffff",
+            "link": "shopify:\/\/collections\/hibikini"
+          }
+        },
+        "collage_banner_U8bTEK": {
+          "type": "collage-banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC01525.png",
+            "title": "More color this summer",
+            "title_color": "#ffffff",
+            "button": "Colorful Naranja",
+            "button_color": "#a4793e",
+            "text_button_color": "#ffffff",
+            "link": "shopify:\/\/products\/flower-trikini-hibikini"
+          }
+        },
+        "collage_banner_CyyYTp": {
+          "type": "collage-banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC03590.png",
+            "title": "Sexy Swimwear",
+            "title_color": "#ffffff",
+            "button": "Sexy Bikini",
+            "button_color": "#a4793e",
+            "text_button_color": "#ffffff",
+            "link": "shopify:\/\/products\/two-pieces-modern-hibikini"
+          }
+        }
+      },
+      "block_order": [
+        "collage_banner_bkezfi",
+        "collage_banner_U8bTEK",
+        "collage_banner_CyyYTp"
+      ],
+      "settings": {
+        "title": "Collage Banner"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "collage_banner_LcKL4e"
   ]
 }

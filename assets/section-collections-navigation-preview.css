@@ -1,7 +1,7 @@
 
 .collections-navigation__box {
   display: none;
-  border: 1px solid rgb(var(--color-button));
+  border: 5px solid rgb(var(--color-button));
   border-radius: 8px;
   grid-auto-flow: column;
   grid-template-columns: 60% 40%;
@@ -11,14 +11,14 @@
   grid-auto-flow: row;
   grid-template-rows: auto;
 }
-.collections-navigation__collection-item:first-child a:hover,
+/* .collections-navigation__collection-item:first-child a:hover,
 .collections-navigation__collection-item:first-child .active {
   border-top-left-radius: 8px;
 }
 .collections-navigation__collection-item:last-child a:hover,
 .collections-navigation__collection-item:last-child .active {
   border-bottom-left-radius: 8px;
-}
+} */
 .collections-navigation__right {
   display: flex;
 }
@@ -31,14 +31,19 @@
   text-decoration: none;
 }
 .collections-navigation__collection-content h4 {
-  color: rgb(var(--color-button));
-  font-size: 2.5rem;
+  color: black;
+  font-size: 4rem;
   margin: 1rem 0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.collections-navigation__collection-content h4:hover{
+  text-decoration: underline;
 }
 .collections-navigation__collection-content.active, .collections-navigation__collection-content:hover {
   background-color: rgb(var(--color-link));
-  border-top: 1px solid rgb(var(--color-button));
-  border-bottom: 1px solid rgb(var(--color-button));
+  /* border-top: 1px solid rgb(var(--color-button));
+  border-bottom: 1px solid rgb(var(--color-button)); */
 }
 .collections-navigation__collection-content.active > p ,
 .collections-navigation__collection-content:hover > p {
@@ -47,15 +52,16 @@
 .collections-navigation__collection-content p {
   opacity: 0;
   margin: .5rem 0;
-  color: rgb(var(--color-button-text));
+  color: antiquewhite;
   transition: all 0.3s ease-in-out;
+  font-size: 2.2rem;
 }
 .collections-navigation__right-image {
   height: 70rem;
   object-fit: cover;
   object-position: top;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
+  /* border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px; */
 }
 
 .collections-navigation__container--mobile {

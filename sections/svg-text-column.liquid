@@ -1,7 +1,7 @@
 <style>
   #shopify-section-{{ section.id }} {
     margin: 3rem 0;
-    padding: 20px 0;
+    /* padding: 20px 0; */
   }
 
   .svg-text__contianer {
@@ -32,18 +32,14 @@
   .is_white svg {
     stroke: white;
   }
-  .is_white svg path {
-    fill: white;
-  }
+ 
   .is_brown svg{
-    stroke: brown;
+    stroke: rgb(var(--color-button));
   }
-  .is_brown svg path{
-    fill: brown;
-  }
+  
   .svg-text__devider {
     margin: 0 auto;
-    margin-top: 5rem;
+    margin-top: 3rem;
     width: 90%;
     border: 1px solid rgb(var(--color-button));
     max-height: 800px;
@@ -114,7 +110,7 @@
           "label": "Icon",
           "options": [
             {
-              "value": "secure",
+              "value": "lock",
               "label": "Lock"
             },
             {
@@ -122,7 +118,7 @@
               "label": "Box"
             },
             {
-              "value": "back",
+              "value": "return",
               "label": "Return"
             }
           ]

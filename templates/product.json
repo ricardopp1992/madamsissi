@@ -56,7 +56,7 @@
         "collapsible_tab_mpmVC8": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Descripcion",
+            "heading": "Description",
             "icon": "none",
             "content": "<p>This is a product description where it explain a lot of stuff about the product.<br\/><br\/>Which are the key features, where is made, etc.<\/p>",
             "page": ""
@@ -65,7 +65,7 @@
         "collapsible_tab_X6ABkY": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Guia de talla",
+            "heading": "Size guide",
             "icon": "none",
             "content": "",
             "page": ""
@@ -74,7 +74,7 @@
         "collapsible_tab_zQrLPi": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Envio",
+            "heading": "Shipping",
             "icon": "none",
             "content": "",
             "page": ""
@@ -97,10 +97,10 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "media_size": "large",
+        "media_size": "small",
         "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "media_fit": "cover",
+        "gallery_layout": "columns",
         "media_position": "left",
         "image_zoom": "lightbox",
         "mobile_thumbnails": "hide",
@@ -135,30 +135,30 @@
           "type": "svg_text",
           "settings": {
             "svg_file_icon": "box",
-            "description": "Entraga Gratuita a Partir de $50",
+            "description": "Free Shipping on Orders Over $50",
             "color_svg": "white"
           }
         },
-        "svg_text_pqqKVy": {
+        "svg_text_cCwgc8": {
           "type": "svg_text",
           "settings": {
-            "svg_file_icon": "secure",
-            "description": "Nuestros metodos de pago son100% Seguro",
+            "svg_file_icon": "lock",
+            "description": "Our payment methods are 100% secure",
             "color_svg": "white"
           }
         },
         "svg_text_zYERJj": {
           "type": "svg_text",
           "settings": {
-            "svg_file_icon": "back",
-            "description": "Dentro de los 30 días siguientes a la fecha de entrega.",
+            "svg_file_icon": "return",
+            "description": "Return Available",
             "color_svg": "white"
           }
         }
       },
       "block_order": [
         "svg_text_m9EL7P",
-        "svg_text_pqqKVy",
+        "svg_text_cCwgc8",
         "svg_text_zYERJj"
       ],
       "settings": {
@@ -197,12 +197,13 @@
     "size_guide_product_XbLbfM": {
       "type": "size_guide_product",
       "settings": {
-        "heading": "Como elegir tu talle",
-        "subheading-1": "Pulgadas",
-        "subheading-2": "Centimetros",
+        "heading": "How to choose your size?",
+        "subheading-1": "Inches",
+        "subheading-2": "Centimeters",
         "table": "pulgadas",
-        "image-1": "shopify:\/\/shop_images\/size-guide-cm.png",
-        "little-text": "**Utilice la tabla anterior como guía general."
+        "image-1": "shopify:\/\/shop_images\/size-guide-cm_a5fc1fd6-7238-40d9-a802-ee7576e6a443.png",
+        "image-2": "shopify:\/\/shop_images\/size-guide-inch.png",
+        "little-text": "**Use the table above as a general guide."
       }
     },
     "collection_list_HzBGnx": {

@@ -8,8 +8,8 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
-            "link": ""
+            "text": "Summer Collection 2024",
+            "link": "shopify:\/\/collections\/hibikini"
           }
         }
       },

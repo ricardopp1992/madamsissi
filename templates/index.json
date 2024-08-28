@@ -7,16 +7,16 @@
           "type": "heading",
           "settings": {
             "heading": "Find Our Bikins On Madam Sissi",
-            "heading_size": "h1"
+            "heading_size": "hxl"
           }
         },
         "buttons_Ajde6G": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "New Arrivals",
+            "button_label_1": "Shop Now",
             "button_link_1": "shopify:\/\/collections",
             "button_style_secondary_1": false,
-            "button_label_2": "On Sale",
+            "button_label_2": "New Arrivals",
             "button_link_2": "shopify:\/\/collections",
             "button_icon": "sale-tag",
             "button_style_secondary_2": true
@@ -28,16 +28,16 @@
         "buttons_Ajde6G"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Screenshot_2024-07-23_at_11.37.12_AM.png",
-        "image_position": "top center",
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
+        "image": "shopify:\/\/shop_images\/DSC01525.png",
+        "image_position": "center center",
+        "image_overlay_opacity": 20,
+        "image_height": "large",
         "desktop_content_position": "middle-center",
         "show_text_box": true,
         "desktop_content_alignment": "center",
         "color_scheme": "scheme-1",
         "image_behavior": "none",
-        "mobile_image": "shopify:\/\/shop_images\/Screenshot_2024-07-23_at_12.48.40_PM.png",
+        "mobile_image": "shopify:\/\/shop_images\/DSC01525.jpg",
         "mobile_content_position": "bottom-center",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
@@ -51,30 +51,35 @@
           "type": "svg_text",
           "settings": {
             "svg_file_icon": "box",
-            "description": "Entraga Gratuita a Partir de $50"
+            "description": "Free Shipping on Orders Over $50",
+            "color_svg": "brown"
           }
         },
-        "svg_text_br4frU": {
+        "svg_text_gRVPgE": {
           "type": "svg_text",
           "settings": {
-            "svg_file_icon": "secure",
-            "description": "Entraga Gratuita a Partir de $50"
+            "svg_file_icon": "lock",
+            "description": "Our payment methods are 100% secure",
+            "color_svg": "brown"
           }
         },
         "svg_text_C8ECK9": {
           "type": "svg_text",
           "settings": {
-            "svg_file_icon": "back",
-            "description": "Devolución Disponible"
+            "svg_file_icon": "return",
+            "description": "Return Available",
+            "color_svg": "brown"
           }
         }
       },
       "block_order": [
         "svg_text_h9KXnd",
-        "svg_text_br4frU",
+        "svg_text_gRVPgE",
         "svg_text_C8ECK9"
       ],
       "settings": {
+        "color_scheme": "",
+        "divider_visibility": "visible"
       }
     },
     "shape_carousel_collections_KVVNwB": {
@@ -181,7 +186,7 @@
         "collection_a8p4nA"
       ],
       "settings": {
-        "title": "Colleciones Destacadas"
+        "title": "Featured Collections"
       }
     },
     "collage_banner_hJcmpC": {
@@ -190,34 +195,37 @@
         "collage_banner_3LBfpr": {
           "type": "collage-banner",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bikinis_banner.png",
-            "title": "Temporada de Verano",
-            "subtitle": "A nice banner text here A nice banner text here",
-            "button": "VER TRAJES DE BAÑO",
-            "link": "",
-            "content_color": ""
+            "image": "shopify:\/\/shop_images\/DSC02521.jpg",
+            "title": "AULALA",
+            "title_color": "#ffffff",
+            "button": "SEE COLLECTION AULALA",
+            "button_color": "#a4793f",
+            "text_button_color": "#ffffff",
+            "link": "shopify:\/\/collections\/aulala"
           }
         },
         "collage_banner_9TDqj8": {
           "type": "collage-banner",
           "settings": {
-            "image": "shopify:\/\/shop_images\/cb_2.png",
-            "title": "Temporada de Verano",
-            "subtitle": "A nice banner text here",
-            "button": "VER COSMÉTICOS",
-            "link": "",
-            "content_color": ""
+            "image": "shopify:\/\/shop_images\/DSC01731_4bafbb30-86b9-4e7a-830d-84821f8a4814.jpg",
+            "title": "VIDOYA",
+            "title_color": "#ffffff",
+            "button": "SEE BIKINIS VIDOYA",
+            "button_color": "#a4793f",
+            "text_button_color": "#ffffff",
+            "link": "shopify:\/\/collections\/vidoya"
           }
         },
         "collage_banner_QypUqG": {
           "type": "collage-banner",
           "settings": {
-            "image": "shopify:\/\/shop_images\/cb_2.png",
-            "title": "Temporada de Verano",
-            "subtitle": "A nice banner text here",
-            "button": "VER COSMÉTICOS",
-            "link": "",
-            "content_color": ""
+            "image": "shopify:\/\/shop_images\/DSC02834.jpg",
+            "title": "TWO PIECES",
+            "title_color": "#ffffff",
+            "button": "SEE TWO PIECES",
+            "button_color": "#a4793f",
+            "text_button_color": "#ffffff",
+            "link": "shopify:\/\/collections\/two-pieces"
           }
         }
       },
@@ -248,8 +256,8 @@
         "instafeed_app_block_BUaQc9"
       ],
       "settings": {
-        "title": "El Estilo Madam Sissi en Instagram",
-        "subtitle": "Siguenos en nuestras redes y comparte tu experiencia."
+        "title": "Madamsissi's Style on Instagram",
+        "subtitle": "Follow us on our social networks and share your experience."
       }
     },
     "map_store_location_jem9Qa": {
@@ -264,7 +272,7 @@
         "schedule_rH7Acx": {
           "type": "schedule",
           "settings": {
-            "schedule": "Lunes a Viernes de 9:00 a 18:00"
+            "schedule": "Monday to Friday from 9:00 a.m. to 6:00 p.m."
           }
         }
       },
@@ -273,8 +281,8 @@
         "schedule_rH7Acx"
       ],
       "settings": {
-        "title": "VISITANOS EN NUESTRA TIENDA",
-        "sub_title": "Si estas de visita en madeira, ven y conoce nuestra tienda física",
+        "title": "VISIT US AT OUR STORE",
+        "sub_title": "If you are visiting Madeira, come and visit our physical store",
         "map_iframe": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7787.33417310762!2d-16.922787411571903!3d32.64222605486035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc605ffbaf9a3e8d%3A0xbbad757d1549c835!2sRoyal%20Savoy%20Madeira!5e0!3m2!1ses!2spt!4v1722966035941!5m2!1ses!2spt\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>",
         "store_image": "shopify:\/\/shop_images\/image_169.png",
         "logo": "shopify:\/\/shop_images\/Logos_MS-01.svg"
@@ -292,14 +300,14 @@
         "heading_69teKt": {
           "type": "heading",
           "settings": {
-            "heading": "Suscribete a Nuestro Newsletter",
+            "heading": "Subscribe to Our Newsletter",
             "heading_size": "h1"
           }
         },
         "paragraph_B4tRzC": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Mantente actualizada con todos nuestros productos y recibe promociones exclusivas<\/p>"
+            "text": "<p>Stay up to date with all our products and receive exclusive promotions<\/p>"
           }
         },
         "email_form_dUAEWG": {
@@ -316,7 +324,6 @@
       ],
       "settings": {
         "color_scheme": "",
-        "background_image": "shopify:\/\/shop_images\/black_gold_pattern.png",
         "full_width": false,
         "padding_top": 40,
         "padding_bottom": 40

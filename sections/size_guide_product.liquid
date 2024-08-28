@@ -5,19 +5,22 @@
     <h2 class="size-guide_title">{{ section.settings.heading }}</h2>
     <div>
       <div class="select-size_box">
-        <p>{{ section.settings.subheading-1 }}</p>
-        <p>{{ section.settings.subheading-2 }}</p>
+        <button onclick="buttonOne()" id="btn1" class="size-guide__button">{{ section.settings.subheading-1 }}</button>
+        <button onclick="buttontwo()" id="btn2" class="size-guide__button">{{ section.settings.subheading-2 }}</button>
       </div>
       <div>
         {% if section.settings.image-1  != blank %}
           <img src="{{ section.settings.image-1 | img_url:'master' }}" 
           alt="size guide"
-          class="image-size"
+          class="image-size hide"
+          id="image2"
           >
         {% endif %}
         {% if section.settings.image-2  != blank %}
           <img src="{{ section.settings.image-2 | img_url: 'master' }}" 
           alt="size guide"
+          class="image-size"
+          id="image1"
           >
         {% endif %}
       </div>
@@ -28,7 +31,21 @@
   </div>
 </div>
 
+<script>
+  function buttonOne() {
+    var x = document.getElementById("image1");
+    var y = document.getElementById("image2");
+    x.style.display = "block";
+    y.style.display = "none";
+  }
 
+  function buttontwo() {
+    var x = document.getElementById("image1");
+    var y = document.getElementById("image2");
+    x.style.display = "none";
+    y.style.display = "block";
+  }
+</script>
 
 {%  schema  %} 
 {
