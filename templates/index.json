@@ -99,13 +99,15 @@
     "wide_banner_rKTG8i": {
       "type": "wide-banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Group_98.png",
+        "image": "shopify:\/\/shop_images\/DSC02508.jpg",
         "title": "Titulo de Banner Aqui",
+        "title_color": "#121212",
         "content": "Lorem ipsum dolor sit amet consectetur. Metus amet non faucibus odio lacinia nam.",
+        "text_content_color": "#121212",
         "button_label": "Ver Cosméticos",
-        "link": "shopify:\/\/products\/animal-print-two-pieces-hibikini",
-        "background_pattern": "light",
-        "blur_color": "#ffffff"
+        "button_color": "#a4793f",
+        "text_button_color": "#ffffff",
+        "link": "shopify:\/\/products\/animal-print-two-pieces-hibikini"
       }
     },
     "collections_navigation_preview_J9bqUd": {
